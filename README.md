@@ -15,18 +15,19 @@
 |11|En tant que __développeur__, je peux modifier un sprint. Cette modification concerne la durée d'un sprint et la date de début du sprint.|LOW|1|1|
 |12|En tant que __développeur__, je peux créer une tâche dans un sprint. Il faudra fournir son nom et sa description ainsi que son chiffrage en jour/homme. Deux autres champs, dépendances et lien avec une user story, sont optionnels. Par défaut toute nouvelle tâche se trouve dans la colonne "_To Do_". |LOW| 1 | 1 |
 |13|En tant que __développeur__, je peux modifier/supprimer une tâche dans un sprint. On pourra modifier son nom, sa description, son chiffrage en jour/homme, ses dépendances ou son lien avec une user story. |LOW| 1 | 1 |
-|14|En tant que __développeur/visiteur__, je peux suivre l'avancement des tâches d'un sprint.  |LOW| 3 | 1 |
+|14|En tant que __développeur/visiteur__, je peux consulter le tableau d'avancement ("_To Do_", "_Ongoing_", "_Done_") des tâches d'un sprint.  |LOW| 3 | 1 |
 |15|En tant que __développeur__, je peux modifier l'état d'avancement d'une tâche en faisant passer une tâche de "To Do" à "_Ongoing_", et de "_Ongoing_" à "_Done_" (et inversement). |LOW| 3 | 1 |
 |16|En tant que __visiteur__, je peux avoir accès à tous les projets, ainsi qu'à l'avancement des sprints, mais sans droits de modification. |LOW| 1 | 1 |
+|17|En tant que __développeur/visiteur__, je peux consulter le graphique de type _Burn Down Chart_ sur la page dédiée à celui-ci.|LOW|3|1|
 
 # Annexe
-## Définition
+## Définitions
 
 (1) __Application__ : outil de gestion de projets Scrum.
 
 (2) __Visiteur__ : utilisateur de l'application non identifié et ne possédant qu'un droit de lecture sur l'ensemble de l'application et des projets.
 
-(3) __ Développeur__ : utilisateur identifié de l'application et possédant des droits de gestion (lecture/écriture/modification) sur les projets Scrum auxquels il est associé.
+(3) __Développeur__ : utilisateur identifié de l'application et possédant des droits de gestion (lecture/écriture/modification) sur les projets Scrum auxquels il est associé.
 
 (4) __Backlog__ : liste ordonnée d'User Stories. Vide par défaut, c'est aux développeurs de rajouter des User Stories.
 
@@ -46,7 +47,7 @@ Un projet SCRUM est constitué des composantes suivantes :
 *   Un __backlog__ (vide par défaut),
 *   Des __sprints__ (un premier sprint vide est créé par défaut),
 *   Pour chaque sprint, un __tableau__ _To Do_, _On Going_ et _Done_ avec les tâches créées disposées dans la colonne _To Do_ par défaut,
-*   Un graphique de type __Burn Down Chart__.
+*   Un graphique de type __Burn Down Chart__, qui sera généré automatiquement en fonction de la durée des sprints et du chiffrage des tâches relatives à ce sprint.
 
 Un projet SCRUM aura pour paramètres :
 *   Le nom du projet,
