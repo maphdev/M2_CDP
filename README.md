@@ -1,5 +1,6 @@
-# M2_CDP
-# BackLog
+# Conduite de Projet : outil de gestion de projets Scrum
+
+## BackLog
 |   ID  |   Description |   Priorité    |   Difficulté      | Sprint correspondant  |
 |:-----:|:--------------|:-------------:|:-----------------:|:---------------------:|
 |1|En tant que __visiteur__, je peux créer un compte développeur, afin de gérer mes projets Scrum. Il faudra fournir un nom d'utilisateur, un mot de passe et une adresse email.|MEDIUM| 3 | 1 |
@@ -19,8 +20,8 @@
 |15|En tant que __visiteur__, je peux avoir accès à tous les projets, ainsi qu'à l'avancement des sprints, mais sans droits de modification. |LOW| 1 | 3 |
 |16|En tant que __développeur/visiteur__, je peux consulter le graphique de type _Burn Down Chart_ sur la page dédiée à celui-ci.|LOW|3|3|
 
-# Annexe
-## Définitions
+## Annexe
+### Définitions
 
 (1) __Application__ : outil de gestion de projets Scrum.
 
@@ -34,8 +35,8 @@
 
 (6) __Sprints__ : période de temps fixe et répétable au cours de laquelle un produit fini de la plus haute valeur possible est créé. Lors de la création d'un projet, un premier sprint vide est créé par défaut, avec une durée et une date de début de sprint définies par le créateur du projet. Les développeurs peuvent créer un nouveau sprint, de la même durée que les sprints précédents. Chaque sprint est représenté par un tableau à trois colonnes _To Do_, _On Going_ et _Done_. Par défaut, les tâches créées sont disposées dans la colonne _To Do_. Les développeurs peuvent actualiser l'état d'une tâche en faisant passer les tâches d'une colonne à une autre.
 
-(7) __Tâches__ : travail technique qu'une équipe de développement accomplit afin de compléter un élément du Backlog. Une tâche est définie par son _nom_, sa _description_ et son _chiffrage en jour/homme_. Par défaut, les tâches sont dans la colonne _To Do_ du sprint dont elle font partie.
+(7) __Tâches__ : travail technique qu'une équipe de développement accomplit afin de compléter un élément du Backlog. Une tâche est définie par son _nom_, sa _description_ et son _chiffrage en jour/homme_. Par défaut, les tâches sont dans la colonne _To Do_ du sprint dont elles font partie.
 
-(8) __Burn Down Chart__ : Graphique qui montre le travail terminé par période de temps par rapport au taux d'achèvement prévu pour la version actuelle du projet. Son but est de permettre au projet d'être sur la bonne voie pour livrer la solution attendue dans les délais souhaitée. Le graphique sera généré automatiquement en fonction de la durée des sprints et du chiffrage des tâches relatives à ce sprint.
+(8) __Burn Down Chart__ : Graphique qui montre le travail terminé par période de temps par rapport au taux d'achèvement prévu pour la version actuelle du projet. Son but est de permettre au projet d'être sur la bonne voie pour livrer la solution attendue dans les délais souhaités. Le graphique sera généré automatiquement en fonction de la durée des sprints et du chiffrage des tâches relatives à ce sprint.
 
 (9) __PO__ : _Product Owner_, membre de l'équipe Scrum dont la responsabilité principale est de maximiser la valeur du produit résultant du travail de l'équipe de développement.
