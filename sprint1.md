@@ -1,3 +1,6 @@
+<style type="text/css">
+    ol { list-style-type: upper-alpha; }
+</style>
 # Sprint 1
 ## Liste des US assignées au sprint 1
 |   ID  |   Description |   Priorité    |   Difficulté      | Sprint correspondant  |
@@ -49,38 +52,38 @@ L'application sera réalisée selon une architecture 2-tiers :
 ## Liste des tâches associées
 
 Composant __(A)__ :
-  * définition : nommage du fichier _"index.html"_
-  * réalisation : implémentation de _"index.html"_
+  * définition : nommage du fichier _"index.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"index.html"_ (0.5 j/h)
 
 Composant __(B)__ :
-  * définition : nommage du fichier _"login.html"_
-  * réalisation : implémentation de _"login.html"_
+  * définition : nommage du fichier _"login.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"login.html"_ (0.5 j/h)
 
 Composant __(C)__ :
-  * définition : nommage du fichier _"createAccount.html"_
-  * réalisation : implémentation de _"createAccount.html"_
+  * définition : nommage du fichier _"createAccount.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"createAccount.html"_ (0.5 j/h)
 
 Composant __(D)__ :
-  * définition : nommage du fichier _"project.html"_
-  * réalisation : implémentation de _"project.html"_
+  * définition : nommage du fichier _"project.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"project.html"_ (0.5 j/h)
 
 Composant __(E)__ :
-  * définition : nommage du fichier _"settings.html"_
-  * réalisation : implémentation de _"settings.html"_
+  * définition : nommage du fichier _"settings.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"settings.html"_ (0.5 j/h)
 
 Composant __(F)__ :
-  * définition : nommage du fichier _"createProject.html"_
-  * réalisation : implémentation de _"createProject.html"_
+  * définition : nommage du fichier _"createProject.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"createProject.html"_ (0.5 j/h)
 
 Composant __(G)__ :
-  * définition :
+  * définition : (0.5 j/h)
     * définition de la structure de la base de donnée (arborescence du fichier json)
     * nommage du fichier _"firebase.js"_
     * détermination des fonctions de requêtes et des paramètres
-  * réalisation : implémentation de _"firebase.js"_
+  * réalisation : implémentation de _"firebase.js"_ (1.5 j/h)
 
 US __(1)__ :
-  * écriture :
+  * écriture : 
   * exécution :
 
 US __(2)__ :
@@ -112,8 +115,3 @@ __Total__ : 2 \* 7 composants + 2 \* 7 US = __28 tâches__
 ## US à rajouter
 
 En tant que développeur, je peux modifier la liste des projets auxquels je suis associé.
-
-
-<style type="text/css">
-    ol { list-style-type: upper-alpha; }
-</style>
