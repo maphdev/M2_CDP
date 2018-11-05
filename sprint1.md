@@ -13,14 +13,19 @@
 ## Liste des composants associés
 
 1. Page HTML contenant la liste des projets
-    * accès à __(4)__, __(2)__ et __(3)__ si déconnecté
+    * accès à __(4)__,
+    * si on est déconnecté, accès à __(2)__ et __(3)__
 2. Page HTML de connexion 
-    * si la connexion est valide, retour à la page précédente, accès à __(1)__, __(3)__
+    * si la connexion est valide, retour à la page précédente, 
+    * accès à __(1)__, __(3)__
 3. Page HTML de création de compte 
-    * si la création est validée, retour à la page précédente en étant connecté, accès à __(1)__, __(2)__
+    * si la création est validée, retour à la page précédente en étant connecté, 
+    * accès à __(1)__, __(2)__
 4. Page HTML dédiée à un projet 
-    * accès à __(1)__, __(5)__, __(2)__ et __(3)__ si déconnecté
+    * accès à __(1)__, __(5)__,
+    * si on est déconnecté, accès à __(2)__ et __(3)__
 5. Page HTML dédiée aux paramètres d'un projet 
-    * accès à __(1)__, __(4)__, __(2)__ et __(3)__ si déconnecté
+    * accès à __(1)__, __(4)__,
+    * si on est déconnecté, accès à __(2)__ et __(3)__
 6. Page HTML pour la création d'un projet
     * accès à __(1)__
