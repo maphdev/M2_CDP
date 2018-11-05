@@ -1,6 +1,3 @@
-<style type="text/css">
-    ol { list-style-type: upper-alpha; }
-</style>
 # Sprint 1
 ## Liste des US assignées au sprint 1
 |   ID  |   Description |   Priorité    |   Difficulté      | Sprint correspondant  |
@@ -21,26 +18,26 @@ L'application sera réalisée selon une architecture 2-tiers :
 
 ## Liste des composants associés
 ### Front-end
-1. Page HTML contenant la liste des projets
+* __[A]__ Page HTML contenant la liste des projets
     * accès à __(D)__,
     * si on est déconnecté, accès à __(B)__ et __(C)__
-2. Page HTML de connexion
+* __[B]__ Page HTML de connexion
     * si la connexion est valide, retour à la page précédente,
     * accès à __(A)__, __(C)__
-3. Page HTML de création de compte
+* __[C]__ Page HTML de création de compte
     * si la création est validée, retour à la page précédente en étant connecté,
     * accès à __(A)__, __(B)__
-4. Page HTML dédiée à un projet
+* __[D]__ Page HTML dédiée à un projet
     * accès à __(A)__, __(E)__,
     * si on est déconnecté, accès à __(B)__ et __(C)__
-5. Page HTML dédiée aux paramètres d'un projet
+* __[E]__ Page HTML dédiée aux paramètres d'un projet
     * accès à __(A)__, __(D)__,
     * si on est déconnecté, accès à __(B)__ et __(C)__
-6. Page HTML pour la création d'un projet
+* __[F]__ Page HTML pour la création d'un projet
     * accès à __(A)__
 
 ### Back-end
-7. Fichier JavaScript pour gérer la base de donnée Firebase
+* __[G]__ Fichier JavaScript pour gérer la base de donnée Firebase
     * création de compte
     * connexion/déconnexion
     * ajout de projets
