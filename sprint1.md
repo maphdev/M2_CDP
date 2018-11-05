@@ -22,4 +22,5 @@
     * accès à __(1)__, __(5)__, __(2)__ et __(3)__ si déconnecté
 5. Page HTML dédiée aux paramètres d'un projet 
     * accès à __(1)__, __(4)__, __(2)__ et __(3)__ si déconnecté
-6. 
+6. Page HTML pour la création d'un projet
+    * accès à __(1)__
