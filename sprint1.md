@@ -112,6 +112,30 @@ US __(7)__ :
 
 __Total__ : 2 \* 7 composants + 2 \* 7 US = __28 tâches__
 
+## Annexe - Arborescence json
+
+{
+ "projects" : {
+   "idProject" : {
+     "name" : "Project1",
+     "description" : "Description1",
+     "durationSprint" : 21,
+     "startingDay" : "06-11-2018",
+     "devList" : [ "9NVz1C5OmRYJnLAV8wrU1Nxyflm1", "jgsGNTRHJEYBqcs6NZ4ntT5bYOK2" ],
+   }
+ },
+ "users" : {
+   "9NVz1C5OmRYJnLAV8wrU1Nxyflm1" : {
+     "username" : "toto",
+     "mail" : "toto@domain.fr"
+   },
+   "jgsGNTRHJEYBqcs6NZ4ntT5bYOK2" : {
+     "username" : "hello",
+     "mail" : "hello@domain.fr"
+   }
+ }
+}
+
 ## TODO
 
 En tant que développeur, je peux supprimer un développeur associé à un projet.
