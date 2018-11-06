@@ -42,9 +42,12 @@ L'application sera réalisée selon une architecture 2-tiers :
     * connexion/déconnexion
     * ajout de projets
     * liste des projets existants
+    * informations d'un projet
     * modifier un projet
     * supprimer un projet
     * ajouter un développeur à un projet
+    * supprimer un développeur d'un projet
+    * liste des développeurs associés à un projet
 
 ## Liste des tâches associées
 
@@ -80,7 +83,7 @@ Composant __(G)__ :
   * réalisation : implémentation de _"firebase.js"_ (1.5 j/h)
 
 US __(1)__ :
-  * écriture : 
+  * écriture :
   * exécution :
 
 US __(2)__ :
@@ -109,6 +112,8 @@ US __(7)__ :
 
 __Total__ : 2 \* 7 composants + 2 \* 7 US = __28 tâches__
 
-## US à rajouter
+## TODO
 
-En tant que développeur, je peux modifier la liste des projets auxquels je suis associé.
+En tant que développeur, je peux supprimer un développeur associé à un projet.
+Mettre à jour les US pour la suppression des développeurs (liste des développeurs dans les paramètres d'un projet)
+Régler la question de front/back-end !
