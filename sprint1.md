@@ -18,26 +18,26 @@ L'application sera réalisée selon une architecture 2-tiers :
 
 ## Liste des composants associés
 ### Front-end
-1. Page HTML contenant la liste des projets
+* __[A]__ Page HTML contenant la liste des projets
     * accès à __(D)__,
     * si on est déconnecté, accès à __(B)__ et __(C)__
-2. Page HTML de connexion
+* __[B]__ Page HTML de connexion
     * si la connexion est valide, retour à la page précédente,
     * accès à __(A)__, __(C)__
-3. Page HTML de création de compte
+* __[C]__ Page HTML de création de compte
     * si la création est validée, retour à la page précédente en étant connecté,
     * accès à __(A)__, __(B)__
-4. Page HTML dédiée à un projet
+* __[D]__ Page HTML dédiée à un projet
     * accès à __(A)__, __(E)__,
     * si on est déconnecté, accès à __(B)__ et __(C)__
-5. Page HTML dédiée aux paramètres d'un projet
+* __[E]__ Page HTML dédiée aux paramètres d'un projet
     * accès à __(A)__, __(D)__,
     * si on est déconnecté, accès à __(B)__ et __(C)__
-6. Page HTML pour la création d'un projet
+* __[F]__ Page HTML pour la création d'un projet
     * accès à __(A)__
 
 ### Back-end
-7. Fichier JavaScript pour gérer la base de donnée Firebase
+* __[G]__ Fichier JavaScript pour gérer la base de donnée Firebase
     * création de compte
     * connexion/déconnexion
     * ajout de projets
@@ -49,38 +49,38 @@ L'application sera réalisée selon une architecture 2-tiers :
 ## Liste des tâches associées
 
 Composant __(A)__ :
-  * définition : nommage du fichier _"index.html"_
-  * réalisation : implémentation de _"index.html"_
+  * définition : nommage du fichier _"index.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"index.html"_ (0.5 j/h)
 
 Composant __(B)__ :
-  * définition : nommage du fichier _"login.html"_
-  * réalisation : implémentation de _"login.html"_
+  * définition : nommage du fichier _"login.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"login.html"_ (0.5 j/h)
 
 Composant __(C)__ :
-  * définition : nommage du fichier _"createAccount.html"_
-  * réalisation : implémentation de _"createAccount.html"_
+  * définition : nommage du fichier _"createAccount.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"createAccount.html"_ (0.5 j/h)
 
 Composant __(D)__ :
-  * définition : nommage du fichier _"project.html"_
-  * réalisation : implémentation de _"project.html"_
+  * définition : nommage du fichier _"project.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"project.html"_ (0.5 j/h)
 
 Composant __(E)__ :
-  * définition : nommage du fichier _"settings.html"_
-  * réalisation : implémentation de _"settings.html"_
+  * définition : nommage du fichier _"settings.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"settings.html"_ (0.5 j/h)
 
 Composant __(F)__ :
-  * définition : nommage du fichier _"createProject.html"_
-  * réalisation : implémentation de _"createProject.html"_
+  * définition : nommage du fichier _"createProject.html"_ (0.5 j/h)
+  * réalisation : implémentation de _"createProject.html"_ (0.5 j/h)
 
 Composant __(G)__ :
-  * définition :
+  * définition : (0.5 j/h)
     * définition de la structure de la base de donnée (arborescence du fichier json)
     * nommage du fichier _"firebase.js"_
     * détermination des fonctions de requêtes et des paramètres
-  * réalisation : implémentation de _"firebase.js"_
+  * réalisation : implémentation de _"firebase.js"_ (1.5 j/h)
 
 US __(1)__ :
-  * écriture :
+  * écriture : 
   * exécution :
 
 US __(2)__ :
@@ -112,8 +112,3 @@ __Total__ : 2 \* 7 composants + 2 \* 7 US = __28 tâches__
 ## US à rajouter
 
 En tant que développeur, je peux modifier la liste des projets auxquels je suis associé.
-
-
-<style type="text/css">
-    ol { list-style-type: upper-alpha; }
-</style>
