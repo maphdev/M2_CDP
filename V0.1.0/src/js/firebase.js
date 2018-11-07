@@ -28,7 +28,15 @@ function createAccount(userName, mail, password){
 }
 
 function logIn(mail, password){
-
+  firebase
+  .auth()
+  .signInWithEmailAndPassword(mail, password)
+  .then(function(){
+    window.location.href = 'index.html';
+  })
+  .catch(function(error){
+    console.log(error.message);
+  });
 }
 
 function logOut(){
