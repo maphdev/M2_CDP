@@ -1,23 +1,18 @@
-FROM node:9
+FROM node:10
 
-# Create app directory
 WORKDIR /app
 
 # Install app dependencies
-COPY server/* /app/server/
-
-WORKDIR /app/server
+COPY package.json package.json
 
 RUN npm install
 # If you are building your code for production
 # RUN npm install --only=production
 
-# Bundle app source
-WORKDIR /app
-
-COPY src/* /app/src/
-
-# Start server and expose port
-CMD [ "node", "server/server.js" ]
+# Copy everything
+COPY . .
 
 EXPOSE 8080
+
+# Start server and expose port
+CMD [ "node", "server.js" ]
