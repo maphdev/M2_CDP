@@ -63,9 +63,12 @@ function createProject(name, description, durationSprint, startingDay){
     var data = {name: name, description: description, durationSprint: durationSprint, startingDay: startingDay, devList: {0: window.localStorage.getItem("userMail")}};
     projectsRef.push(data, function(err){
       if (err){
-        console.log(err);
+        window.alert(err);
+      } else {
+        window.location.href = '/';
       }
     });
+
 }
 
 function getProject(id){

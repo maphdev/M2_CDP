@@ -132,7 +132,7 @@ nav ul li a:hover {
 }
 
 /* Footer */
-footer {
+.footer {
   position: absolute;
   right: 0;
   bottom: 0;
