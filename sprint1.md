@@ -14,25 +14,27 @@
 
 L'application sera réalisée selon une architecture 2-tiers :
 * le front-end en HTML/CSS/JavaScript,
-* le back-end avec Firebase.
+* le back-end avec Firebase,
+
+NodeJs et Express seront utilisés, ainsi que le générateur de templates EJS.
 
 ## Liste des composants associés
 ### Front-end
 * __[A]__ Page HTML contenant la liste des projets
-    * accès à __(D)__,
-    * si on est déconnecté, accès à __(B)__ et __(C)__
+    * si on est connecté, accès à __(D)__,
+    * si on n'est pas connecté, accès à  __(B)__,  __(C)__, __(D)__,
 * __[B]__ Page HTML de connexion
-    * si la connexion est valide, retour à la page précédente,
+    * si la connexion est valide, retour à la page __(A)__,
     * accès à __(A)__, __(C)__
 * __[C]__ Page HTML de création de compte
-    * si la création est validée, retour à la page précédente en étant connecté,
+    * si la création est validée, retour à la page __(A)__,
     * accès à __(A)__, __(B)__
 * __[D]__ Page HTML dédiée à un projet
-    * accès à __(A)__, __(E)__,
-    * si on est déconnecté, accès à __(B)__ et __(C)__
+    * si on est connecté, accès à __(A)__, __(E)__,
+    * si on est déconnecté, accès à __(A)__, __(E)__, __(B)__ et __(C)__
 * __[E]__ Page HTML dédiée aux paramètres d'un projet
-    * accès à __(A)__, __(D)__,
-    * si on est déconnecté, accès à __(B)__ et __(C)__
+    * si on est connecté, accès à __(A)__, __(D)__,
+    * si on est déconnecté, accès à __(A)__, __(B)__, __(C)__ et __(D)__
 * __[F]__ Page HTML pour la création d'un projet
     * accès à __(A)__
 
@@ -52,35 +54,35 @@ L'application sera réalisée selon une architecture 2-tiers :
 ## Liste des tâches associées
 
 Composant __(A)__ :
-  * définition : nommage du fichier _"index.html"_ (0.5 j/h)
-  * réalisation : implémentation de _"index.html"_ (0.5 j/h)
+  * définition : nommage du fichier _"index.ejs"_ (0.5 j/h)
+  * réalisation : implémentation de _"index.ejs"_ (0.5 j/h)
 
 Composant __(B)__ :
-  * définition : nommage du fichier _"login.html"_ (0.5 j/h)
-  * réalisation : implémentation de _"login.html"_ (0.5 j/h)
+  * définition : nommage du fichier _"login.ejs"_ (0.5 j/h)
+  * réalisation : implémentation de _"login.ejs"_ (0.5 j/h)
 
 Composant __(C)__ :
-  * définition : nommage du fichier _"createAccount.html"_ (0.5 j/h)
-  * réalisation : implémentation de _"createAccount.html"_ (0.5 j/h)
+  * définition : nommage du fichier _"createAccount.ejs"_ (0.5 j/h)
+  * réalisation : implémentation de _"createAccount.ejs"_ (0.5 j/h)
 
 Composant __(D)__ :
-  * définition : nommage du fichier _"project.html"_ (0.5 j/h)
-  * réalisation : implémentation de _"project.html"_ (0.5 j/h)
+  * définition : nommage du fichier _"project.ejs"_ (0.5 j/h)
+  * réalisation : implémentation de _"project.ejs"_ (0.5 j/h)
 
 Composant __(E)__ :
-  * définition : nommage du fichier _"settings.html"_ (0.5 j/h)
-  * réalisation : implémentation de _"settings.html"_ (0.5 j/h)
+  * définition : nommage du fichier _"settings.ejs"_ (0.5 j/h)
+  * réalisation : implémentation de _"settings.ejs"_ (0.5 j/h)
 
 Composant __(F)__ :
-  * définition : nommage du fichier _"createProject.html"_ (0.5 j/h)
-  * réalisation : implémentation de _"createProject.html"_ (0.5 j/h)
+  * définition : nommage du fichier _"createProject.ejs"_ (0.5 j/h)
+  * réalisation : implémentation de _"createProject.ejs"_ (0.5 j/h)
 
 Composant __(G)__ :
   * définition : (0.5 j/h)
     * définition de la structure de la base de donnée (arborescence du fichier json)
-    * nommage du fichier _"firebase.js"_
+    * nommage du fichier _"database.js"_
     * détermination des fonctions de requêtes et des paramètres
-  * réalisation : implémentation de _"firebase.js"_ (1.5 j/h)
+  * réalisation : implémentation de _"database.js"_ (1.5 j/h)
 
 US __(1)__ :
   * écriture :
@@ -114,6 +116,7 @@ __Total__ : 2 \* 7 composants + 2 \* 7 US = __28 tâches__
 
 ## Annexe - Arborescence json
 
+```
 {
  "projects" : {
    "idProject" : {
@@ -135,9 +138,10 @@ __Total__ : 2 \* 7 composants + 2 \* 7 US = __28 tâches__
    }
  }
 }
+```
 
 ## TODO
 
-En tant que développeur, je peux supprimer un développeur associé à un projet.
-Mettre à jour les US pour la suppression des développeurs (liste des développeurs dans les paramètres d'un projet)
-Régler la question de front/back-end !
+- "En tant que développeur, je peux supprimer un développeur associé à un projet."
+- US pour la gestion des releases et la gestion des résultats des tests E2E
+- Mettre à jour les US pour la suppression des développeurs (liste des développeurs dans les paramètres d'un projet)
