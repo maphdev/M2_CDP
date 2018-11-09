@@ -3,19 +3,58 @@
   <head>
       <% include ../partials/head %>
   </head>
-  <body>
+  <body class="background-form">
 
     <header>
         <% include ../partials/header %>
     </header>
 
     <main>
-      createProject
+      <!-- Form -->
+      <div class="container">
+       <div class="row">
+         <form id="form" method="post" action="createProject" class="Absolute-Center Absolute-Center-Menu is-Responsive card-form rounded" style="min-height: 550px;">
+           <h3 class="text-center">Nouveau projet</h3>
+           <br>
+           <div class="form-group">
+             <label for="inputName">Nom du projet</label>
+             <input type="text" id="form_name" class="form-control" placeholder="Nom du projet" minlength="1" required name="name">
+           </div>
+           <div class="form-group">
+             <label for="inputDescription">Description</label>
+             <input type="text" id="form_description" class="form-control" placeholder="..." name="description">
+           </div>
+           <div class="form-group">
+             <label for="inputSprintLength">Durée du sprint</label>
+             <input type="number" id="form_sprint_length" class="form-control" placeholder="Durée du sprint (jours)" min="0" value="14" required name="sprintLength">
+           </div>
+           <div class="form-group">
+             <label for="inputStartDay">Date de début du sprint</label>
+             <input type="text" id="form_start_day" class="form-control" placeholder="jj-mm-aaaa" required name="startDay">
+           </div>
+           <br>
+           <input type="submit" value="Créer un projet" class="btn btn-primary" id="form_button">
+         </form>
+       </div>
+      </div>
     </main>
 
     <footer>
         <% include ../partials/footer %>
     </footer>
 
+    <script>
+      // form's submit
+      var form = $('#form');
+      form.submit(function(event) {
+        event.preventDefault();
+        var projectName = document.getElementById("form_name").value;
+        var projectDesc = document.getElementById("form_description").value;
+        var projectSprintLength = document.getElementById("form_sprint_length").value;
+        var projectStartDay = document.getElementById("form_start_day").value;
+        createProject(projectName, projectDesc, projectSprintLength, projectStartDay);
+      });
+
+    </script>
   </body>
 </html>

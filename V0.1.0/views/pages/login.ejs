@@ -13,7 +13,7 @@
        <!-- Form -->
       <div class="container">
         <div class="row">
-          <form id="form" class="Absolute-Center Absolute-Center-Menu is-Responsive card-form rounded">
+          <form id="form" method="post" action="loginPost" class="Absolute-Center Absolute-Center-Menu is-Responsive card-form rounded">
             <h3 class="text-center">Connexion à un compte</h3>
             <br>
             <div class="form-group">
@@ -37,11 +37,6 @@
     </footer>
 
     <script>
-      // Menu-toggle button
-      $(".menu-icon").on("click", function() {
-        $("nav ul").toggleClass("showing");
-      });
-
       // test form's validity
       $('#form').on('change', ':input', function(e) {
         if($('#form_email').is(":valid") && $('#form_password').is(":valid")) {
@@ -50,6 +45,15 @@
         } else {
           $('#form_button').prop('disabled', true);
         }
+      });
+
+      // form's submit
+      var form = $('#form');
+      form.submit(function(event) {
+        event.preventDefault();
+        var emailValue = document.getElementById("form_email").value;
+        var passwordValue = document.getElementById("form_password").value;
+        logIn(emailValue, passwordValue);
       });
     </script>
 
