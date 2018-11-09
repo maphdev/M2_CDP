@@ -75,7 +75,17 @@ function getProject(id){
 }
 
 function getProjectList(){
-
+  var rootRef = firebase.database().ref();
+  var projectsRef = rootRef.child('projects');
+  projectsRef.once('value',function(snapshot){
+    snapshot.forEach(function(project){
+      $("#project-list-body").append("<tr>" +
+      "<th scope=\"row\">" + project.val().name + "</th>" +
+      "<td>" + project.val().description + "</td>" +
+      "<td>" + project.val().startingDay + "</td>" +
+      "</tr>")
+    })
+  });
 }
 
 function updateProjectName(name){
