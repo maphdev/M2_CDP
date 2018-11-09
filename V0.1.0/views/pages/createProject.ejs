@@ -3,8 +3,13 @@
   <head>
       <% include ../partials/head %>
   </head>
+  <!-- if not connected, that person can't access the page -->
+  <script>
+    if (window.localStorage.getItem("userId") == null){
+      window.location.href = "/";
+    }
+  </script>
   <body class="background-form">
-
     <header>
         <% include ../partials/header %>
     </header>
@@ -54,7 +59,6 @@
         var projectStartDay = document.getElementById("form_start_day").value;
         createProject(projectName, projectDesc, projectSprintLength, projectStartDay);
       });
-
     </script>
   </body>
 </html>
