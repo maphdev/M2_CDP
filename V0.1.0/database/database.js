@@ -68,7 +68,6 @@ function createProject(name, description, durationSprint, startingDay){
         window.location.href = '/';
       }
     });
-
 }
 
 function getProject(id){

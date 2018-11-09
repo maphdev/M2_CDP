@@ -12,6 +12,10 @@
     <main>
       <div class="Absolute-Center-Menu container" style="text-align:center">
       <h1 id="project-title"></h1>
+      <p id="project-description"></p>
+      <p id="project-duration-sprint"></p>
+      <p id="project-starting-day"></p>
+      <p id=></p>
       <div>
         <a id="settings-project-button" class="btn btn-primary" href="/settings">Settings</a>
       </div>
@@ -22,5 +26,21 @@
         <% include ../partials/footer %>
     </footer>
 
+    <script>
+
+    function getProject(id){
+      firebase.database().ref().child('projects').child(id).on('value', function(snap) {
+        if(snap.val()){
+          $("#project-title").text(snap.val().name);
+          $("#project-description").text(snap.val().description);
+          $("#project-duration-sprint").text(snap.val().durationSprint);
+          $("#project-starting-day").text(snap.val().startingDay);
+        }
+      });
+    }
+
+    getProject('-LQs8GtCaVVmoGOzt-Z4');
+
+    </script>
   </body>
 </html>
