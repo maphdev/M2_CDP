@@ -10,12 +10,22 @@
     </header>
 
     <main>
-      index
+      <div class="Absolute-Center Absolute-Center-Menu is-Responsive text-center" style="width:100px;">
+        <a id="create-project-button" class="btn btn-primary" href="/createProject">Créer un projet</a>
+      </div>
     </main>
 
     <footer>
-        <% include ../partials/footer %>
+      <% include ../partials/footer %>
     </footer>
+
+    <script>
+    if (window.localStorage.getItem("userId") != null){
+      $("#create-project-button").show();
+    } else {
+      $("#create-project-button").hide();
+    }
+    </script>
 
   </body>
 </html>
