@@ -55,7 +55,11 @@
           }
         });
       }
-      getProject('-LQs8GtCaVVmoGOzt-Z4');
+      getProject(window.localStorage.getItem('projectID'));
+
+      if (window.localStorage.getItem("userId") == null){
+        $("input").prop('disabled', true);
+      }
     </script>
   </body>
 </html>
