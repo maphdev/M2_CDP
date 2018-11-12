@@ -19,6 +19,7 @@
 |14|En tant que __développeur__, je peux modifier l'état d'avancement d'une tâche en faisant passer une tâche de "To Do" à "_Ongoing_", et de "_Ongoing_" à "_Done_" (et inversement). |LOW| 3 | 3 |
 |15|En tant que __visiteur__, je peux avoir accès à tous les projets, ainsi qu'à l'avancement des sprints, mais sans droits de modification. |LOW| 1 | 3 |
 |16|En tant que __développeur/visiteur__, je peux consulter le graphique de type _Burn Down Chart_ sur la page dédiée à celui-ci.|LOW|3|3|
+|17|En tant que __développeur__, je peux désinscrire un développeur associé à un projet auquel je participe.|MEDIUM|1|3|
 
 ## Annexe
 ### Définitions
