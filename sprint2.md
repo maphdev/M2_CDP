@@ -3,7 +3,7 @@
 |   ID  |   Description |   Priorité    |   Difficulté      | Sprint correspondant  |
 |:-----:|:--------------|:-------------:|:-----------------:|:---------------------:|
 |4|En tant que __développeur__, je peux ajouter un autre développeur à un projet existant. Il faudra fournir le nom d'utilisateur de ce développeur.|MEDIUM| 1 | 1 |
-|7|En tant que __développeur__, je peux modifier les paramètres généraux d'un projet, ou le supprimer. Les modifications concernent le nom du projet, sa description, la durée d'un sprint et la date de début du premier sprint.|HIGH| 1 | 1 |
+|7|En tant que __développeur__, je peux modifier les paramètres généraux d'un projet, ou le supprimer. Les modifications concernent le nom du projet, sa description, la durée d'un sprint, la date de début du premier sprint et les développeurs associés au projet (ajout/suppression d'un développeur).|HIGH| 1 | 1 |
 |8|En tant que __développeur__, je peux ajouter une User Story au Backlog. Il faudra fournir sa description et son niveau de difficulté. Un autre champ priorité sera rempli par le PO ultérieurement. L'identifiant sera généré automatiquement.|HIGH| 2 | 2 |
 |9|En tant que __développeur__, je peux modifier/supprimer une User Story dans le Backlog. On pourra modifier sa description, son niveau de difficulté ou sa priorité.|HIGH| 1 | 2 |
 |10|En tant que __développeur__, je peux créer un sprint Scrum afin d'y ajouter des tâches. Un nouveau sprint a la même durée que les sprints précédents. Un sprint Scrum correspond à un tableau à 3 colonnes ("_To Do_", "_Ongoing_", "_Done_"). Par défaut, un sprint vide est généré automatiquement. |LOW| 1 | 2 |
