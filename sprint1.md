@@ -22,7 +22,7 @@ NodeJs et Express seront utilisés, ainsi que le générateur de templates EJS.
 ### Front-end
 * __[A]__ Page HTML contenant la liste des projets
     * si on est connecté, accès à __(D)__,
-    * si on n'est pas connecté, accès à  __(B)__,  __(C)__, __(D)__,
+    * si on n'est pas connecté, accès à  __(B)__ et __(D)__,
 * __[B]__ Page HTML de connexion
     * si la connexion est valide, retour à la page __(A)__,
     * accès à __(A)__, __(C)__
@@ -34,7 +34,7 @@ NodeJs et Express seront utilisés, ainsi que le générateur de templates EJS.
     * si on est déconnecté, accès à __(A)__, __(E)__, __(B)__ et __(C)__
 * __[E]__ Page HTML dédiée aux paramètres d'un projet
     * si on est connecté, accès à __(A)__, __(D)__,
-    * si on est déconnecté, accès à __(A)__, __(B)__, __(C)__ et __(D)__
+    * si on est déconnecté, accès à __(A)__, __(B)__ et __(D)__
 * __[F]__ Page HTML pour la création d'un projet
     * accès à __(A)__
 
@@ -142,6 +142,4 @@ __Total__ : 2 \* 7 composants + 2 \* 7 US = __28 tâches__
 
 ## TODO
 
-- "En tant que développeur, je peux supprimer un développeur associé à un projet."
 - US pour la gestion des releases et la gestion des résultats des tests E2E
-- Mettre à jour les US pour la suppression des développeurs (liste des développeurs dans les paramètres d'un projet)
