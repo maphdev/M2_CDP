@@ -27,9 +27,7 @@ US __(8)__ :
 US __(9)__ :
   * écriture :
   * exécution :
-  * __[D]__ Page HTML dédiée à un projet
-      * si on est connecté, accès à __(A)__, __(E)__, __(G)__ et __(I)__,
-      * si on est déconnecté, accès à __(A)__, __(E)__, et __(B)__
+
 US __(10)__ :
   * écriture :
   * exécution :
