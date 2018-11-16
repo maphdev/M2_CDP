@@ -6,23 +6,23 @@ Lien __Trello__ : https://trello.com/b/FUHfe35Q
 
 | ID | Description | US correspondante(s) | Ressources |  Avancement | chiffrage (j/h) |
 |:--:|:------------|:--------------------:|:----------:|:-------------:|:---------------:|
-| __T_Gr__ | Implémentation de _"database.js"_ . Ce fichier comprend des fonctions d'ajout, d'accès, de mise à jour et de suppression des différentes composantes de l'application (utilisateurs, projets, etc.), ainsi que des fonctions de connexion, de déconnexion et de création de compte. | X | database.js | ON GOING | 1.5 |
-| __T_Hd__ | Définition du fichier _"addUS.ejs"_ . Ce fichier permet de saisir les différentes informations nécessaires à la création d'une User Story. | #8 | addUS.ejs | TO DO | 0.5 |
-| __T_Id__ | Définition du fichier _"addTask.ejs"_ . Ce fichier permet de saisir les différentes informations nécessaires à la création d'une tâche. | #11 | addTask.ejs | TO DO | 0.5 |
-| __T_Hr__ | Implémentation de _"addUS.ejs"_ . Ce fichier comportera un formulaire avec un champ correspondant à la description de l'US, ainsi qu'un champ concernant la difficulté. L'identifiant sera généré automatiquement. De plus, des boutons seront disponibles pour valider ou annuler la création de l'US. Une fois les champs saisis et la validation effectuée, une communication avec la base de données sera faite, afin d'y ajouter les nouvelles informations saisies. | #8 | addUS.ejs | TO DO | 0.5 |
-| __T_Ir__ | Implémentation de _"addTask.ejs"_ . Ce fichier comportera un formulaire comprenant un champ pour le nom, un champ pour la description, un champ pour le chiffrage estimé, un champ pour le lien avec les US et un dernier champ pour les dépendances avec les US. Seuls les trois premiers champs devront être obligatoirement remplis, les deux derniers étant optionnels. De plus, des boutons seront disponibles pour valider ou annuler la création de la tâche. Une fois les champs saisis et la validation effectuée, une communication avec la base de données sera faite, afin d'y ajouter les nouvelles informations saisies. | #11 | addTask.ejs | TO DO | 0.5 |
-| T2_4ec | Écriture du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |
-| T2_4ex | Réalisation du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |
-| T2_7ec | Écriture du test de validation de l'US #7 | #7 |  | TO DO | 0.5 |
-| T2_7ex | Réalisation du test de validation de l'US #7. | #7 |  | TO DO | 0.5 |
-| T2_8ec | Écriture du test de validation de l'US #8 | #8 |  | TO DO | 0.5 |
-| T2_8ex | Réalisation du test de validation de l'US #8. | #8 |  | TO DO | 0.5 |
-| T2_9ex | Réalisation du test de validation de l'US #9. | #9 |  | TO DO | 0.5 |
-| T2_9ec | Écriture du test de validation de l'US #9 | #9 |  | TO DO | 0.5 |
-| T2_10ex | Réalisation du test de validation de l'US #10. | #10 |  | TO DO | 0.5 |
-| T2_10ec | Écriture du test de validation de l'US #10 | #10 |  | TO DO | 0.5 |
-| T2_11ec | Écriture du test de validation de l'US #11 | #11 |  | TO DO | 0.5 |
-| T2_11ex | Réalisation du test de validation de l'US #11. | #11 |  | TO DO | 0.5 |
+| __T2_Gr__ | Implémentation de _"database.js"_ . Ce fichier comprend des fonctions d'ajout, d'accès, de mise à jour et de suppression des différentes composantes de l'application (utilisateurs, projets, etc.), ainsi que des fonctions de connexion, de déconnexion et de création de compte. | X | database.js | ON GOING | 1.5 |
+| __T2_Hd__ | Définition du fichier _"addUS.ejs"_ . Ce fichier permet de saisir les différentes informations nécessaires à la création d'une User Story. | #8 | addUS.ejs | TO DO | 0.5 |
+| __T2_Id__ | Définition du fichier _"addTask.ejs"_ . Ce fichier permet de saisir les différentes informations nécessaires à la création d'une tâche. | #11 | addTask.ejs | TO DO | 0.5 |
+| __T2_Hr__ | Implémentation de _"addUS.ejs"_ . Ce fichier comportera un formulaire avec un champ correspondant à la description de l'US, ainsi qu'un champ concernant la difficulté. L'identifiant sera généré automatiquement. De plus, des boutons seront disponibles pour valider ou annuler la création de l'US. Une fois les champs saisis et la validation effectuée, une communication avec la base de données sera faite, afin d'y ajouter les nouvelles informations saisies. | #8 | addUS.ejs | TO DO | 0.5 |
+| __T2_Ir__ | Implémentation de _"addTask.ejs"_ . Ce fichier comportera un formulaire comprenant un champ pour le nom, un champ pour la description, un champ pour le chiffrage estimé, un champ pour le lien avec les US et un dernier champ pour les dépendances avec les US. Seuls les trois premiers champs devront être obligatoirement remplis, les deux derniers étant optionnels. De plus, des boutons seront disponibles pour valider ou annuler la création de la tâche. Une fois les champs saisis et la validation effectuée, une communication avec la base de données sera faite, afin d'y ajouter les nouvelles informations saisies. | #11 | addTask.ejs | TO DO | 0.5 |
+| __T2_4ec__ | Écriture du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |
+| __T2_4ex___ | Réalisation du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |
+| __T2_7ec__ | Écriture du test de validation de l'US #7 | #7 |  | TO DO | 0.5 |
+| __T2_7ex__ | Réalisation du test de validation de l'US #7. | #7 |  | TO DO | 0.5 |
+| __T2_8ec__ | Écriture du test de validation de l'US #8 | #8 |  | TO DO | 0.5 |
+| __T2_8ex__ | Réalisation du test de validation de l'US #8. | #8 |  | TO DO | 0.5 |
+| __T2_9ex__ | Réalisation du test de validation de l'US #9. | #9 |  | TO DO | 0.5 |
+| __T2_9ec__ | Écriture du test de validation de l'US #9 | #9 |  | TO DO | 0.5 |
+| __T2_10ex__ | Réalisation du test de validation de l'US #10. | #10 |  | TO DO | 0.5 |
+| __T2_10ec__ | Écriture du test de validation de l'US #10 | #10 |  | TO DO | 0.5 |
+| __T2_11ec__ | Écriture du test de validation de l'US #11 | #11 |  | TO DO | 0.5 |
+| __T2_11ex__ | Réalisation du test de validation de l'US #11. | #11 |  | TO DO | 0.5 |
 
 #### A placer dans le tableau :
 
