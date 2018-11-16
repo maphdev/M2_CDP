@@ -18,6 +18,8 @@ L'application sera réalisée selon une architecture 2-tiers :
 
 NodeJs et Express seront utilisés, ainsi que le générateur de templates EJS.
 
+L'application sera déployée avec Docker afin de faciliter l'installation.
+
 ## Liste des composants associés
 ### Front-end
 * __[A]__ Page HTML contenant la liste des projets
@@ -52,6 +54,46 @@ NodeJs et Express seront utilisés, ainsi que le générateur de templates EJS.
     * ajouter un développeur à un projet
     * supprimer un développeur d'un projet
     * liste des développeurs associés à un projet
+
+### Template EJS
+
+* __[EJS1]__ Fichier template pour le menu commun à l'ensemble des pages de l'application
+* __[EJS2]__ Fichier template pour la balise <head> commune à l'application
+
+### Architecture
+
+* __[ARCH1]__ Fichier package.json pour installer l'ensemble des dépendances avec Node.js.
+* __[ARCH2]__ Fichier server.js pour servir les pages HTML.
+
+### Déploiement
+
+* __[DEPL1]__ Fichier Dockerfile pour le déploiement de l'application
+* __[DEPL2]__ Fichier docker-compose pour le déploiement de l'application
+
+## Annexe - Organisation des fichiers/dossiers du projets
+
+```
+/database
+/public
+  /css
+  /img
+  /js
+/views
+  /pages
+  /partials
+docker-compose.yml
+Dockerfile
+package.json
+server.js
+```
+
+Le dossier _"database"_ contient le fichier gérant les accès à la base de donnée.
+
+Le dossier _"public"_ contient les ressources statiques de l'application.
+
+Le dossier _"views"_ contient les templates EJS. Le dossier _"pages"_ contient les pages entières à afficher tandis que le dossier _"partials"_ contient des blocs communs à plusieurs pages pour éviter la duplication de pages (ex: menu).
+
+Les fichiers d'initialisation du serveur et de déploiement de l'application se trouvent à l'origine.
 
 ## Annexe - Arborescence json
 
