@@ -54,7 +54,7 @@ function logOut(){
   })
   .catch(function(error){
     window.alert(error.message);
-  })
+  });
 }
 
 function createProject(name, description, durationSprint, startingDay){
@@ -77,7 +77,7 @@ function getProject(id){
 function getProjectList(){
   var rootRef = firebase.database().ref();
   var projectsRef = rootRef.child('projects');
-  projectsRef.once('value',function(snapshot){    
+  projectsRef.once('value',function(snapshot){
     snapshot.forEach(function(project){
       $("#project-list-body").append("<tr>" +
       "<th scope=\"row\">" + project.val().name + "</th>" +
@@ -85,14 +85,14 @@ function getProjectList(){
       "<td>" + project.val().startingDay + "</td>" +
       "<td>" + project.val().durationSprint + " jours</td>" +
       "<td>" + "<a onclick=\"storeID('" + project.key + "')\" role=\"button\" class=\"btn btn-primary\" href=\"/project\">Accéder au projet</a>" + "</td>" +
-      "</tr>")
-    })
+      "</tr>");
+    });
   });
 }
 
 function storeID(id){
   window.localStorage.setItem("projectID", id);
-  
+
 }
 
 function updateProjectName(name){

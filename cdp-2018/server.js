@@ -4,7 +4,7 @@ var path = require("path");
 var app = express();
 
 // set the view engine to ejs
-app.set('views', __dirname + '/views')
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // set static folder
@@ -43,5 +43,5 @@ app.get('/settings', function(req, res) {
 
 //Launch listening server on port 8080
 app.listen(8080, function () {
-  console.log('app listening on port 8080!')
-})
+  console.log('app listening on port 8080!');
+});
