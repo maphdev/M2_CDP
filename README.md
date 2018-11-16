@@ -20,6 +20,12 @@
 |15|En tant que __visiteur__, je peux avoir accès à tous les projets, ainsi qu'à l'avancement des sprints, mais sans droits de modification. |LOW| 1 | 3 |
 |16|En tant que __développeur/visiteur__, je peux consulter le graphique de type _Burn Down Chart_ sur la page dédiée à celui-ci.|LOW|3|3|
 |17|En tant que __développeur__, je peux désinscrire un développeur associé à un projet auquel je participe.|MEDIUM|1|3|
+|18|En tant que __développeur__, je peux consulter la liste des releases de mon projet. Chaque élement de la liste consiste en un numéro de version, une date de release, un lien pour télécharger la release en question et la liste des issues réalisées lors de cette release.|LOW|1|3|
+|19|En tant que __développeur__, je peux ajouter un nouvel élément dans la liste des releases. Il faudra fournir un numéro de version, une date de release, un lien pour télécharger la release en question et la liste des issues réalisées. |LOW|1|3|
+|20|En tant que __développeur__, je peux modifier/supprimer un nouvel élément dans la liste des releases. On pourra modifier son numéro de version, sa date de release, son lien de téléchargement ou la liste des issues réalisées.|LOW|1|3|
+|21|En tant que __développeur__, je peux consulter les résultats des tests E2E d'un projet dans la liste des tests E2E. Un test E2E est caractérisé par un identifiant, une description, la date de dernière exécution et le résultat du dernier test réalisé.|LOW|1|3|
+|22|En tant que __développeur__, je peux ajouter un test E2E dans la liste des tests E2E. Il faudra fournir un identifiant, une description, la date de dernière exécution et le résultat du dernier test réalisé.|LOW|1|3|
+|23|En tant que __développeur__, je peux modifier/supprimer le résultat d'un test E2E, c'est à dire sa date de dernière exécution et le résultat du dernier test réalisé.|LOW|1|3|
 
 ## Annexe
 ### Définitions
