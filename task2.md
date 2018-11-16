@@ -4,7 +4,7 @@ Lien __Trello__ : https://trello.com/b/FUHfe35Q
 
 # Liste des tâches
 
-| ID | Description | US correspondante(s) | Ressources |  Avancement | chiffrage (j/h) |
+| ID | Description | US correspondante(s) | Dépendances |  Avancement | chiffrage (j/h) |
 |:--:|:------------|:--------------------:|:----------:|:-------------:|:---------------:|
 | __T2_Gr__ | Implémentation de _"database.js"_ . Ce fichier comprend des fonctions d'ajout, d'accès, de mise à jour et de suppression des différentes composantes de l'application (utilisateurs, projets, etc.), ainsi que des fonctions de connexion, de déconnexion et de création de compte. | X | database.js | ON GOING | 1.5 |
 | __T2_Hd__ | Définition du fichier _"addUS.ejs"_ . Ce fichier permet de saisir les différentes informations nécessaires à la création d'une User Story. | #8 | addUS.ejs | TO DO | 0.5 |
@@ -38,4 +38,4 @@ La page contient diverses informations concernant un projet. En tout premier lie
 
   _* Définir un fichier signifie le nommer, définir les fichiers dont il dépend, éventuellement définir les noms des variables ou méthodes créées/appelées._
 
-__Total__ : 2 \* 2 composants + 2 \* 6 US = __16 tâches__
+__Total__ : 2 \* 2.5 composants + 2 \* 6 US = __17 tâches__
