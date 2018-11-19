@@ -17,12 +17,12 @@ router.route('/createAccount')
     firebase
     .auth()
     .createUserWithEmailAndPassword(mail, password)
-    .then(async function() {
-      await cf.mongoose.connect(cf.dbURL);
+    .then(function() {
+      cf.mongoose.connect(cf.dbURL);
       var user = new cf.User();
       user.mail = mail;
       user.userName = userName;
-      await user.save(function(err) {
+      user.save(function(err) {
         if (err) {
           res.json({status: 500, error: err});
         }
@@ -71,6 +71,18 @@ router.route('/logout')
     })
     .catch(function(error){
       res.send(error);
+    });
+  });
+
+router.route('/resetPassword')
+  .post(function(req, res) {
+    let mail = req.body.resetToMail;
+    firebase.auth().sendPasswordResetEmail(mail)
+    .then(function() {
+      res.redirect('/login');
+    })
+    .catch(function(error){
+      res.render('pages/login', {error: error});
     });
   });
 
