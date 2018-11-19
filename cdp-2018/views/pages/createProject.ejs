@@ -4,11 +4,6 @@
       <% include ../partials/head %>
   </head>
   <!-- if not connected, that person can't access the page -->
-  <script>
-    if (window.localStorage.getItem("userId") == null){
-      window.location.href = "/";
-    }
-  </script>
   <body class="background-form">
     <header>
         <% include ../partials/header %>
@@ -31,11 +26,11 @@
            </div>
            <div class="form-group">
              <label for="inputSprintLength">Durée du sprint</label>
-             <input type="number" id="form_sprint_length" class="form-control" placeholder="Durée du sprint (jours)" min="0" value="14" required name="sprintLength">
+             <input type="number" id="form_sprint_length" class="form-control" placeholder="Durée du sprint (jours)" min="0" value="14" required name="durationSprint">
            </div>
            <div class="form-group">
              <label for="inputStartDay">Date de début du sprint</label>
-             <input type="text" id="form_start_day" class="form-control" placeholder="jj-mm-aaaa" required name="startDay">
+             <input type="text" id="form_start_day" class="form-control" placeholder="jj-mm-aaaa" required name="startingDay">
            </div>
            <br>
            <input type="submit" value="Créer un projet" class="btn btn-primary" id="form_button">
@@ -43,22 +38,8 @@
        </div>
       </div>
     </main>
-
-    <footer>
-        <% include ../partials/footer %>
-    </footer>
-
+    
     <script>
-      // form's submit
-      var form = $('#form');
-      form.submit(function(event) {
-        event.preventDefault();
-        var projectName = document.getElementById("form_name").value;
-        var projectDesc = document.getElementById("form_description").value;
-        var projectSprintLength = document.getElementById("form_sprint_length").value;
-        var projectStartDay = document.getElementById("form_start_day").value;
-        createProject(projectName, projectDesc, projectSprintLength, projectStartDay);
-      });
     </script>
   </body>
 </html>

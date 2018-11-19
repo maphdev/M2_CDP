@@ -13,7 +13,7 @@
       <!-- Form -->
       <div class="container">
        <div class="row">
-         <form id="form" class="Absolute-Center Absolute-Center-Menu is-Responsive card-form rounded">
+         <form id="form" method="post" action="createAccount" class="Absolute-Center Absolute-Center-Menu is-Responsive card-form rounded">
            <h3 class="text-center">Création d'un compte développeur</h3>
            <br>
            <div class="form-group">
@@ -31,14 +31,14 @@
            <br>
            <input type="submit" value="Créer un compte" class="btn btn-primary" id="form_button" disabled>
            <a href="login" class="btn btn-secondary">Se connecter</a>
+           <div style="margin-top: 30px; color:red;">
+           <%if(typeof error != "undefined"){%>
+             <%= error.message%>
+           <%}%>
          </form>
        </div>
       </div>
     </main>
-
-    <footer>
-        <% include ../partials/footer %>
-    </footer>
 
     <script>
       // test form's validity
@@ -48,16 +48,6 @@
         } else {
           $('#form_button').prop('disabled', true);
         }
-      });
-
-      // form's submit
-      var form = $('#form');
-      form.submit(function(event) {
-        event.preventDefault();
-        var usernameValue = document.getElementById("form_username").value;
-        var emailValue = document.getElementById("form_email").value;
-        var passwordValue = document.getElementById("form_password").value;
-        createAccount(usernameValue, emailValue, passwordValue);
       });
     </script>
 

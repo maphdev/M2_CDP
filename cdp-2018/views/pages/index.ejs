@@ -6,49 +6,49 @@
   <body>
 
     <header>
-        <% include ../partials/header %>        
+        <% include ../partials/header %>
     </header>
 
     <main>
-      <div class="container" style="width:100px;">
-        <a id="create-project-button" class="btn btn-primary" href="/createProject">Créer un projet</a>
-        <br style="margin:20px">
+      <% if(locals.userId != null) { %>
+        <div class="container" style="width:100px;">
+          <a id="create-project-button" class="btn btn-primary" href="/createProject">Créer un projet</a>
+          <br style="margin:20px">
+        </div>
+      <%}%>
+
+      <div class="container">
+        <h2>Liste des projets</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nom du projet</th>
+              <th scope="col">Description</th>
+              <th scope="col">Date de départ</th>
+              <th scope="col">Durée des sprints</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="project-list-body">
+            <% projects.forEach(function(project){ %>
+              <tr>
+                <td><%= project.name %></td>
+                <td><%= project.description %></td>
+                <td><%= project.durationSprint %></td>
+                <td><%= project.startingDay %></td>
+                <form method="post" action="project">
+                  <td><button type="submit" value='<%= project._id %>' class="btn btn-primary" name="id">Accéder au projet</td>
+                </form>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
       </div>
+
     </main>
 
-    <div class="container">
-      <h2>Liste des projets</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Nom du projet</th>
-            <th scope="col">Description</th>
-            <th scope="col">Date de départ</th>
-            <th scope="col">Durée des sprints</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="project-list-body">
-        </tbody>
-      </table>
-    </div>    
-
-    <footer>
-      <% include ../partials/footer %>
-    </footer>
-
     <script>
-    if (window.localStorage.getItem("userId") != null){
-      $("#create-project-button").show();
-    } else {
-      $("#create-project-button").hide();
-    }
-
     $("#menu-list").hide();
-    getProjectList();
-
-    // Only for first release
-    //window.localStorage.setItem("projectID", '-LQs8GtCaVVmoGOzt-Z4');
     </script>
 
   </body>

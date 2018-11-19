@@ -16,6 +16,21 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+// using express-session
+app.use(require('express-session')({
+        name: '_cdp', // The name of the cookie
+        secret: '1234', // The secret is required, and is used for signing cookies
+        resave: false, // Force save of session for each request.
+        saveUninitialized: false // Save a session that is new, but has not been modified
+    }));
+
+app.use(function(req, res, next){
+  res.locals.userId = req.session.userId;
+  res.locals.mail = req.session.userMail;
+  res.locals.projectId = req.session.projectId;
+  next();
+});
+
 // import routes
 var mainRoutes = require('./routes/main');
 app.use('/', mainRoutes);
