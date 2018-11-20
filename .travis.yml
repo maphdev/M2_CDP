@@ -2,6 +2,16 @@ language: node_js
 node_js:
  - "node"
 
+services:
+ - docker
+
+before_install:
+ - cd cdp-2018
+
+install:
+ - docker build -t myapp .
+ - docker run -d -p 8081:8080 --name myapp myapp
+
 script:
-  - cd cdp-2018
-  - npm test
+ - docker ps | grep -i myapp
+ - npm test
