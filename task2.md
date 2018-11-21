@@ -4,40 +4,38 @@ Lien __Trello__ : https://trello.com/b/FUHfe35Q
 
 # Liste des tâches
 
-| ID | Description | US correspondante(s) | Dépendances |  Avancement | chiffrage (j/h) |
-|:--:|:------------|:--------------------:|:----------:|:-------------:|:---------------:|
-| __T2_Dr__ | Implémentation de "project.ejs" (suite). La page contient le menu (décrit dans T1_EJS1d) et 5 tabs : "Backlog", "Sprints", "Gestion des releases", "Gestion des tests", et "Burn Down Chart". Les tabs sont vides pour le moment. Elle possède également un bouton "Paramètres du projet" dirigeant l'utilisateur vers la page de modification des paramètres d'un projet. | #6 |  | ON GOING | 0.5 |
-| __T2_Gd__ | Définition de nouvelles fonctions dans _"database.js"_ , relatives aux US correspondant au sprint 2. Définition de la base de données, par rapport aux nouveaux éléments qui vont y figurer. | X |  | ON GOING | 0.5 |
-| __T2_Gr__ | Implémentation de _"database.js"_ . Vont être ajoutées à ce fichier diverses fonctions : ajout/suppression de développeurs à un projet existant (_addDeveloperToProject()_ / _removeDeveloperFromProject()_), accès à toutes les informations relatives à un projet (_getProject()_ / _getDeveloperList()_), modification d'un projet (_updateProjectName()_ / _updateProjectDescription()_ / _updateProjectDurationSprint()_ / _updateProjectStartingDay()_), suppression d'un projet (_deleteProject()_). On y trouvera aussi des fonctions d'ajout/modification/suppression d'US, d'ajout de sprint et d'ajout/modification/suppression de tâches. | X |  | ON GOING | 1.5 |
-| __T2_Hd__ | Définition du fichier _"addUS.ejs"_ . Ce fichier permet de saisir les différentes informations nécessaires à la création d'une User Story. | #8 |  | TO DO | 0.5 |
-| __T2_Hr__ | Implémentation de _"addUS.ejs"_ . Ce fichier comportera un formulaire avec un champ correspondant à la description de l'US, ainsi qu'un champ concernant la difficulté. L'identifiant sera généré automatiquement. De plus, des boutons seront disponibles pour valider ou annuler la création de l'US. Une fois les champs saisis et la validation effectuée, une communication avec la base de données sera faite, afin d'y ajouter les nouvelles informations saisies. | #8 |  | TO DO | 0.5 |
-| __T2_Id__ | Définition du fichier _"addTask.ejs"_ . Ce fichier permet de saisir les différentes informations nécessaires à la création d'une tâche. | #11 |  | TO DO | 0.5 |
-| __T2_Ir__ | Implémentation de _"addTask.ejs"_ . Ce fichier comportera un formulaire comprenant un champ pour le nom, un champ pour la description, un champ pour le chiffrage estimé, un champ pour le lien avec les US et un dernier champ pour les dépendances avec les US. Seuls les trois premiers champs devront être obligatoirement remplis, les deux derniers étant optionnels. De plus, des boutons seront disponibles pour valider ou annuler la création de la tâche. Une fois les champs saisis et la validation effectuée, une communication avec la base de données sera faite, afin d'y ajouter les nouvelles informations saisies. | #11 |  | TO DO | 0.5 |
-| __T2_4ec__ | Écriture du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |
-| __T2_4ex__ | Réalisation du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |
-| __T2_7ec__ | Écriture du test de validation de l'US #7 | #7 |  | TO DO | 0.5 |
-| __T2_7ex__ | Réalisation du test de validation de l'US #7. | #7 |  | TO DO | 0.5 |
-| __T2_8ec__ | Écriture du test de validation de l'US #8 | #8 |  | TO DO | 0.5 |
-| __T2_8ex__ | Réalisation du test de validation de l'US #8. | #8 |  | TO DO | 0.5 |
-| __T2_9ex__ | Réalisation du test de validation de l'US #9. | #9 |  | TO DO | 0.5 |
-| __T2_9ec__ | Écriture du test de validation de l'US #9 | #9 |  | TO DO | 0.5 |
-| __T2_10ex__ | Réalisation du test de validation de l'US #10. | #10 |  | TO DO | 0.5 |
-| __T2_10ec__ | Écriture du test de validation de l'US #10 | #10 |  | TO DO | 0.5 |
-| __T2_11ec__ | Écriture du test de validation de l'US #11 | #11 |  | TO DO | 0.5 |
-| __T2_11ex__ | Réalisation du test de validation de l'US #11. | #11 |  | TO DO | 0.5 |
+| ID | Description | US correspondante(s) | Dépendances |  Avancement | chiffrage (j/h) | Développeur(s) |
+|:--:|:------------|:--------------------:|:----------:|:-------------:|:---------------:|:--------------|
+| __T2_EJS3d__ | Définition du fichier _"sidebar.ejs"_ contenant la sidebar commune aux pages dédiés à un projet de l'application. | X | X | DONE | 0.5 | Manon |
+| __T2_EJS3r__ | Création du fichier _"sidebar.ejs"_ contenant la sidebar commune aux pages dédiés à un projet de l'application. La sidebar contient 7 liens : un lien vers la page récapitulative du projet _"Projet"_, un lien vers le _"Backlog"_, un lien vers les _"Sprints"_, un lien vers la _"Gestion des releases"_, un lien vers la _"Gestion des tests"_, un lien vers le _""Burn Down Chart"_ et un lien vers les _"Paramètres du projet"_.| X | T2_EJS3d | DONE | 0.5 | Manon |
+| __T2_Dr__ | Implémentation de "project.ejs" (suite). La page contient le menu (décrit dans T1_EJS1d) et la sidebar (décrite dans T1_EJS3d). Il ne reste plus que l'implémentation de la sidebar à rajouter. | #6 |  | DONE | 0.5 | Manon |
+| __T2_BE5r__ | Implémentation de _"project.js"_ (suite sprint 1). Modifier la route _"/settings"_ en requête PUT pour prendre en compte la modification dans MongoDB de la liste des développeurs spécifiée dans le formulaire. Ajouter la route _"/deleteProject"_ en requête DELETE pour supprimer un projet de la liste des projets dans la base de données MongoDB. En cas de succès, elle redirige l'utilisateur sur la page d'accueil de l'application. | #4, #7 |  | TO DO | 0.5 |  |
+| __T2_Kr__ | Implémentation de _"settings.ejs"_ (suite). Ajout de la liste des développeurs dans le formulaire. Il faut pouvoir ajouter / supprimer un développeur de la liste des développeurs. Ajout du bouton _"Supprimer le projet"_ afin de supprimer définitivement le projet de la liste des prijets de l'application en faisant appel à la route _"/deleteProject"_? | #4, #7 |  | TO DO | 0.5 |  |
+| __T2_BE5d2__ | Définition des formulaire des modals des pages _"backlogs.ejs"_ (création d'US) et _"sprints.ejs"_ (création de tâche) pour l'implémentation des pages _"ejs"_ côté client et des routes côté server. | #8, #9, #10, #11 |  | TO DO | 0.5 |  |
+| __T2_BE5r2__ | Implémentation de _"project.js"_ (suite sprint 2). Les routes à définir sont : <br> - _"/createUserStory"_ en requête POST qui créé une User Story dans la base de données MongoDB avec les données du formulaire. <br> - _"/updateUserStory"_ en requête PUT qui met à jour une User Story dans la base de données MongoDB avec les données du formulaire. <br> - _"/deleteUserStory"_ en requête DELETE qui supprime l'User Story sélectionnée par l'utilisateur de la base de données MongoDB. <br> - _"createTask"_ en requête POST qui crée une nouvelle tâche dans la base de données MongoDB avec les données du formulaire. |  #8, #9, #10, #11 |  | TO DO | 0.5 |  |
+| __T2_Ed__ | Définition du fichier _"backlog.ejs"_ . Ce fichier liste les Users Stories d'un projet et permet d'ajouter/supprimer/modifier une user story. | #8, #9 |  | TO DO | 0.5 |  |
+| __T2_Er__ | Implémentation de _"backlog.ejs"_ . Un bouton en haut de la page _"Créer une User Story"_ permet d'afficher un formulaire de création d'User Story sous la forme de modal. Ce formulaire comprends deux champs : _"Description"_ et _"Niveau de difficulté"_. Le bouton "Créer une User Story" de ce formulaire permet de créer une user story dans la base de données en passant par la route _"\createUserStory"_. Ce fichier comporte également la liste des Users Stories d'un projet. Chaque élement de la liste possède 2 boutons. Le premier bouton _"Modifier"_ permet d'afficher un formulaire de modification d'User Story sous la forme d'un modal. Ce formulaire comprends trois champs : _"Description"_, _"Niveau de difficulté"_ et _"Priorité"_. Le bouton "Modifier l'User Story" de ce formulaire permet de modifier l'user story dans la base de donnée en passant par la route _"\updateUserStory". Le deuxième bouton _"Supprimer"_ permet de supprimer l'user story en question du backlog en passant par la route _"/deleteUserStory"_. | #8, #9 |  | TO DO | 0.5 |  |
+| __T2_Fd__ | Définition du fichier _"sprints.ejs"_ . Ce fichier permet de récapituler l'ensemble des tâches d'un sprint. | #11 |  | TO DO | 0.5 |  |
+| __T2_Fr__ | Implémentation de _"sprints.ejs"_ . Un bouton en haut de la page _"Créer une tâche"_ permet d'afficher un formulaire de création d'une tâche sous la forme de modal. Ce formulaire comprends cing champs : _"Nom"_, _"Description"_, _"Chiffrage j/h"_, _"Dépendances"_ (optionnel) et _"Lien avec User Story"_ (optionnel). Le bouton "Créer une tâche" de ce formulaire permet de créer une tâche dans la base de données en passant par la route _"\createTask"_. Ce fichier comporte également la liste des tâches d'un sprint. Les fonctions de modifications/suppression ne sont pas encore à faire. | #11 |  | TO DO | 0.5 |  |
+| __T2_1ec__ | Écriture du test de validation de l'US #1. | #1 |  | TO DO | 0.5 |  |
+| __T2_1ex__ | Réalisation du test de validation de l'US #1. | #1 |  | TO DO | 0.5 |  |
+| __T2_2ec__ | Écriture du test de validation de l'US #2. | #2 |  | TO DO | 0.5 |  |
+| __T2_2ex__ | Réalisation du test de validation de l'US #2. | #2 |  | TO DO | 0.5 |  |
+| __T2_3ec__ | Écriture du test de validation de l'US #3. | #3 |  | TO DO | 0.5 |  |
+| __T2_3ex__ | Réalisation du test de validation de l'US #3. | #3 |  | TO DO | 0.5 |  |
+| __T2_4ec__ | Écriture du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |  |
+| __T2_4ex__ | Réalisation du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |  |
+| __T2_5ec__ | Écriture du test de validation de l'US #5. | #5 |  | TO DO | 0.5 |  |
+| __T2_5ex__ | Réalisation du test de validation de l'US #5. | #5 |  | TO DO | 0.5 |  |
+| __T2_6ec__ | Écriture du test de validation de l'US #6. | #6 |  | TO DO | 0.5 |  |
+| __T2_6ex__ | Réalisation du test de validation de l'US #6. | #6 |  | TO DO | 0.5 |  |
+| __T2_7ec__ | Écriture du test de validation de l'US #7 | #7 |  | TO DO | 0.5 |  |
+| __T2_7ex__ | Réalisation du test de validation de l'US #7. | #7 |  | TO DO | 0.5 |  |
+| __T2_8ec__ | Écriture du test de validation de l'US #8 | #8 |  | TO DO | 0.5 |  |
+| __T2_8ex__ | Réalisation du test de validation de l'US #8. | #8 |  | TO DO | 0.5 |  |
+| __T2_9ex__ | Réalisation du test de validation de l'US #9. | #9 |  | TO DO | 0.5 |  |
+| __T2_9ec__ | Écriture du test de validation de l'US #9 | #9 |  | TO DO | 0.5 | . |
 
-#### A placer dans le tableau :
+__Total__ : 5 (sprint 1) + 2 \* 3 composants + 2 \* 9 US = __29 tâches__
 
-Informations sur project.ejs :
-
-On y retrouve le Backlog, les sprints, la gestion des releases, la gestion des tests E2e, et un graphique Burn Down Chart.
-
-La page contient diverses informations concernant un projet. En tout premier lieu, elle contient le backlog, c'est-à-dire un tableau avec des User Stories. Par défaut, il est vide. Un bouton _"+"_ permet d'accéder à la page d'ajout d'une US. La page continent également la liste des sprints, sous formes de tableaux de tâches à 3 colonnes (_TO DO_, _ON GOING_, _GONE_). Par défaut, un seul sprint est créé, vide. Un bouton _"Nouvelle tâche"_ permet d'accéder à la page d'ajout d'une tâche. Par défaut, cette tâche sera ajoutée dans la colonne "_TO DO_" du sprint associé. Des flèches directionnelles permettent de déplacer les tâches dans les différentes colonnes. Un bouton _"Nouveau Sprint"_ permet d'accéder à la page de création d'un sprint.
-
-  #### Rappels :
-
-  _* Une tâche est "faite" lorsque le code a été copié sur la branche master et que le code compile._
-
-  _* Définir un fichier signifie le nommer, définir les fichiers dont il dépend, éventuellement définir les noms des variables ou méthodes créées/appelées._
-
-__Total__ : 1 (sprint 1) + 2 \* 3 composants + 2 \* 6 US = __19 tâches__
+A faire : définir tâche pour US 10 !
