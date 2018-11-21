@@ -6,20 +6,20 @@
   <body>
 
     <header>
-        <% include ../partials/header %>
+        <% include ../partials/menu %>
     </header>
 
-    <main>
-      <% if(locals.userId != null) { %>
-        <div class="container" style="width:100px;">
-          <a id="create-project-button" class="btn btn-primary" href="/createProject">Créer un projet</a>
-          <br style="margin:20px">
-        </div>
-      <%}%>
-
+    <main id="main-menu">
       <div class="container">
-        <h2>Liste des projets</h2>
-        <table class="table">
+        <h2 class="jumbotron text-center">Liste des projets</h2>
+        <% if(locals.userId != null) { %>
+          <div class="row">
+            <div class="col-12 text-center" style="margin-bottom:30px;">
+              <a id="create-project-button" class="btn btn-info" href="/createProject">Créer un projet</a>
+            </div>
+          </div>
+        <%}%>
+        <table class="table table-striped">
           <thead>
             <tr>
               <th scope="col">Nom du projet</th>
@@ -37,7 +37,7 @@
                 <td><%= project.durationSprint %></td>
                 <td><%= project.startingDay %></td>
                 <form method="post" action="project">
-                  <td><button type="submit" value='<%= project._id %>' class="btn btn-primary" name="id">Accéder au projet</td>
+                  <td><button type="submit" value='<%= project._id %>' class="btn btn-info" name="id">Accéder au projet</td>
                 </form>
               </tr>
             <% }) %>

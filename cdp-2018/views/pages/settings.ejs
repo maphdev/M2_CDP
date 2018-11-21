@@ -3,16 +3,18 @@
   <head>
       <% include ../partials/head %>
   </head>
-  <body class="background-form">
+  <body>
 
     <header>
-        <% include ../partials/header %>
+        <% include ../partials/menu %>
     </header>
 
-    <main>
+    <% include ../partials/sidebar %>
+
+    <main id="main-project">
       <div class="container">
        <div class="row">
-         <form method="post" action="/settings" id="form" class="Absolute-Center Absolute-Center-Menu is-Responsive card-form rounded" style="min-height: 550px;">
+         <form method="post" action="/settings" class="Absolute-Center is-Responsive card-form rounded" style="min-height: 550px; top: 160px; left: 250px; bottom: 100px; right: 0;">
            <h3 class="text-center">Options</h3>
            <br>
            <div class="form-group">
@@ -33,7 +35,7 @@
            </div>
            <br>
            <%if(locals.userId != null){%>
-             <input type="submit" value="Valider" class="btn btn-primary" id="modify_button">
+             <input type="submit" value="Valider" class="btn btn-info" id="modify_button">
            <%}%>
            <a class="btn btn-danger" id="cancel_button" href="/project">Annuler</a>
          </form>

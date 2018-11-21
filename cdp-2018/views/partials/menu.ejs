@@ -1,0 +1,26 @@
+<nav>
+  <div class="menu-icon">
+    <i class="fa fa-bars fa-2x"></i>
+  </div>
+  <div class="logo">
+    <a href="/" style="text-decoration: none; color: #fff; text-shadow: #111 3px 3px 10px;">CDP</a>
+  </div>
+  <div class="menu">
+    <ul>
+      <% if(locals.userId != null) { %>
+        <li id="menu-list"><i class="fas fa-list"></i>&emsp;<a href="/" style="text-decoration: none;">Liste des Projets</a></li>
+        <li><i class="fas fa-user"></i>&emsp;<a id="menu-connect" href="/logout" style="text-decoration: none;">Se déconnecter (<%-mail%>)</a></li>
+      <% } else{ %>
+        <li id="menu-list"><i class="fas fa-list"></i>&emsp;<a href="/" style="text-decoration: none;">Liste des Projets</a></li>
+        <li><i class="fas fa-user"></i>&emsp;<a id="menu-connect" href="/login" style="text-decoration: none;">Se connecter / Créer un compte</a></li>
+      <% } %>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  // Menu-toggle button
+  $(".menu-icon").on("click", function() {
+    $("nav ul").toggleClass("showing");
+  });
+</script>

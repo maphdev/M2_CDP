@@ -6,14 +6,14 @@
   <!-- if not connected, that person can't access the page -->
   <body class="background-form">
     <header>
-        <% include ../partials/header %>
+        <% include ../partials/menu %>
     </header>
 
     <main>
       <!-- Form -->
       <div class="container">
        <div class="row">
-         <form id="form" method="post" action="createProject" class="Absolute-Center Absolute-Center-Menu is-Responsive card-form rounded" style="min-height: 550px;">
+         <form method="post" action="createProject" class="Absolute-Center is-Responsive card-form rounded" style="min-height: 550px;">
            <h3 class="text-center">Nouveau projet</h3>
            <br>
            <div class="form-group">
@@ -33,12 +33,12 @@
              <input type="text" id="form_start_day" class="form-control" placeholder="jj-mm-aaaa" required name="startingDay">
            </div>
            <br>
-           <input type="submit" value="Créer un projet" class="btn btn-primary" id="form_button">
+           <input type="submit" value="Créer un projet" class="btn btn-info" id="form_button">
          </form>
        </div>
       </div>
     </main>
-    
+
     <script>
     </script>
   </body>

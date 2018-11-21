@@ -6,22 +6,18 @@
   <body>
 
     <header>
-        <% include ../partials/header %>
+        <% include ../partials/menu %>
     </header>
 
-    <main>
-      <div class="Absolute-Center-Menu container" style="text-align:center">
-        <% if(locals.projectId != null) { %>
-          <h1><%= project.name %></h1>
-          <p><%= project.description %></p>
-          <p><%= project.durationSprint %></p>
-          <p><%= project.startingDay %></p>
-          <div>
-            <a id="settings-project-button" class="btn btn-primary" href="/settings">Settings</a>
-          </div>
-        <%}%>
-    </div>
+    <sidebar>
+      <% include ../partials/sidebar %>
+    </sidebar>
+
+    <main id="main-project">
+      <div class="container-fluid">
+
+      </div>
     </main>
-    
+
   </body>
 </html>

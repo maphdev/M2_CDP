@@ -1,0 +1,25 @@
+<div id="mySidenav" class="sidenav">
+   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-angle-double-left fa-lg"></i></a>
+   <a href="/project" style="text-decoration: none;">Backlog</a>
+   <a href="#" style="text-decoration: none;">Sprints</a>
+   <a href="#" style="text-decoration: none;">Gestion des releases</a>
+   <a href="#" style="text-decoration: none;">Gestion des tests</a>
+   <a href="#" style="text-decoration: none;">Burn Down Chart</a>
+   <a href="/settings" style="text-decoration: none;">Paramètres du projet</a>
+</div>
+
+<span onclick="openNav()" id="sidenav-logo"><i class="fas fa-angle-double-right fa-3x sidenav-logo"></i></span>
+
+<script>
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main-project").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main-project").style.marginLeft = "0";
+}
+</script>

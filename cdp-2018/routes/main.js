@@ -17,4 +17,10 @@ router.route('/')
     });
   });
 
+router.route('/test')
+    .get(async function(req, res) {
+      res.render('pages/test');
+    });
+
+
 module.exports = router;
