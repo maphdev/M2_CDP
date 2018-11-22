@@ -27,14 +27,12 @@ beforeAll(async () => {
 describe('Registration', () => {
     test('Account creation', async () => {
         await page.goto(baseURL)
-        await page.click("#menu-connect")
+        await page.click('[id="menu-connect"]')
     })
 })
 
 afterAll(() => {
-    if (process.env.DEBUG) {
       browser.close()
-    }
   })
 
 
