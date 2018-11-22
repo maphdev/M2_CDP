@@ -14,4 +14,4 @@ install:
 
 script:
  - docker ps | grep -i myapp
- - npm test
+ - npm run test
