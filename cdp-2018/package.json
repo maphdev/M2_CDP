@@ -1,7 +1,7 @@
 {
-  "name": "project",
+  "name": "cdp-2018",
   "version": "1.0.0",
-  "description": "",
+  "description": "Planificateur de projets SCRUM",
   "main": "server.js",
   "scripts": {
     "test": "echo \"No test specified\""
