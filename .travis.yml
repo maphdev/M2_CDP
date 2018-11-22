@@ -7,7 +7,7 @@ services:
 
 before_install:
  - cd cdp-2018
- - npm install
+ - npm install jest puppeteer
 
 install:
  - docker build -t myapp .
