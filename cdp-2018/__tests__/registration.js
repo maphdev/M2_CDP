@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const baseURL = 'http://localhost:8080';
+const baseURL = 'http://localhost:8081';
 const loginRoute = `${baseURL}/login`;
 const createAccountRoute = `${baseURL}/createAccount`;
 const user = {
