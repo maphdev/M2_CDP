@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const baseURL = 'http://localhost:8081';
+const baseURL = 'http://localhost:8080';
 const loginRoute = `${baseURL}/login`;
 const createAccountRoute = `${baseURL}/createAccount`;
 const user = {
@@ -32,7 +32,7 @@ describe('Registration', () => {
 })
 
 afterAll(() => {
-    if (!process.env.DEBUG) {
+    if (process.env.DEBUG) {
       browser.close()
     }
   })
