@@ -4,8 +4,8 @@ var firebase = require("../database/authConfig.js").firebase;
 const baseURL = 'http://localhost:8080';
 const loginRoute = `${baseURL}/login`;
 const user = {
-    username : 'Util1',
-    mail : 'Util1@mail.com',
+    username : 'Util0',
+    mail : 'util0@mail.com',
     password : 'Util00'
 }
 

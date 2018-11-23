@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 const baseURL = 'http://localhost:8080';
 const loginRoute = `${baseURL}/login`;
 const user = {
-    username : 'util1',
+    username : 'Util0',
     mail : 'util0@mail.com',
     password : 'Util00'
 }
@@ -23,8 +23,8 @@ beforeAll(async () => {
     page = await browser.newPage();
   })
 
-describe('Login', () => {
-    test('Login', async () => {
+describe('Logout', () => {
+    test('Logout', async () => {
         await page.goto(baseURL);
         await page.click("#menu-connect");
     })
