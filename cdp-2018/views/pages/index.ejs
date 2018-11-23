@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-      <% include ../partials/head %>
+      <% include ../partials/head.ejs %>
   </head>
   <body>
 
     <header>
-        <% include ../partials/menu %>
+        <% include ../partials/menu.ejs %>
     </header>
 
     <main id="main-menu">
@@ -34,8 +34,8 @@
               <tr>
                 <td><%= project.name %></td>
                 <td><%= project.description %></td>
-                <td><%= project.durationSprint %></td>
                 <td><%= project.startingDay %></td>
+                <td><%= project.durationSprint %></td>
                 <form method="post" action="project">
                   <td><button type="submit" value='<%= project._id %>' class="btn btn-info" name="id">Accéder au projet</td>
                 </form>
