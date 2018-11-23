@@ -7,7 +7,7 @@ services:
 
 before_install:
  - cd cdp-2018
- - npm install jest puppeteer
+ - npm install jest puppeteer firebase
 
 install:
  - docker build -t myapp .
@@ -16,4 +16,5 @@ install:
 script:
  - docker ps | grep -i myapp
  - npm test login.js
+ - npm test newProject.js
  - npm test logout.js
