@@ -4,9 +4,9 @@ const baseURL = 'http://localhost:8080';
 const loginRoute = `${baseURL}/login`;
 const createAccountRoute = `${baseURL}/createAccount`;
 const user = {
-    username : 'Util1',
-    mail : 'Util1@mail.com',
-    password : 'Util01'
+    username : 'Util0',
+    mail : 'util0@mail.com',
+    password : 'Util00'
 }
 
 let browser
@@ -21,18 +21,18 @@ beforeAll(async () => {
           }
         : {}
     )
-    page = await browser.newPage()
+    page = await browser.newPage();
   })
 
 describe('Registration', () => {
     test('Account creation', async () => {
-        await page.goto(baseURL)
-        await page.click('[id="menu-connect"]')
+        await page.goto(baseURL);
+        
+        await page.waitFor('#menu-connect');
+        await page.click("#menu-connect");
     })
 })
 
 afterAll(() => {
-      browser.close()
+      browser.close();
   })
-
-
