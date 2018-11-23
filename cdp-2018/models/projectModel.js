@@ -10,7 +10,7 @@ let ProjectSchema = new Schema({
     backlog : [{
         id: Number,
         description: String,
-        difficulty: Number,
+        difficulty: String,
         priority: String
     }],
     usCount : Number
