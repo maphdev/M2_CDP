@@ -19,6 +19,8 @@ router.route('/createProject')
     project.durationSprint = req.body.durationSprint;
     project.startingDay = req.body.startingDay;
     project.devList = req.body.dev;
+    project.usCount = 0;
+    project.backlog = [];
     await project.save(function(err) {
       if (err) {
         res.send({status: 500, error: err});
@@ -77,4 +79,54 @@ router.route('/settings')
     });
   });
 
+router.route('/backlog')
+  .get(async function(req, res){
+    let projectId = req.session.projectId;
+    await cf.mongoose.connect(cf.dbURL);
+    cf.Project.findOne({_id: projectId}, function(err, project) {
+      if (err) {
+        res.json({status: 500, error: err});
+      }
+      res.render('pages/backlog', {backlog: project.backlog, project: project});
+      cf.mongoose.disconnect();
+    });
+  })
+
+router.route('/userStory')
+  .post(async function(req, res) {
+    var count = 0;
+    let projectId = req.session.projectId;
+    
+    await cf.mongoose.connect(cf.dbURL);
+
+    cf.Project.findOne({_id: projectId}, function(err, project) {
+      if (err) {
+        res.json({status: 500, error: err});
+      }
+      count = project.usCount;
+    });
+
+    count = count + 1;
+
+    cf.Project.findOneAndUpdate({_id: projectId}, 
+      {$push: {"backlog": {id: count, description: req.body.usDesc, difficulty: req.body.usDiff}}}, 
+      {upsert:true}, 
+      function(err, project) {
+      if (err) {
+        res.json({status: 500, error: err});
+      }
+    });
+
+    cf.Project.findOneAndUpdate({_id: projectId}, 
+      {usCount: count}, 
+      {upsert:true}, 
+      function(err, project) {
+      if (err) {
+        res.json({status: 500, error: err});
+      }
+      res.redirect('backlog');
+      cf.mongoose.disconnect();
+    });
+
+  });
 module.exports = router;

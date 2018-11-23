@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <% include ../partials/head.ejs %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous" defer></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" defer></script>
+  </head>
+  <body>
+
+    <header>
+        <% include ../partials/menu.ejs %>
+    </header>
+
+    <sidebar>
+        <% include ../partials/sidebar.ejs %>
+    </sidebar>
+
+    <main id="main-menu">
+        <div class="container">
+          <% if(locals.userId != null) { %>
+            <div class="row">
+              <div class="col-12 text-center" style="margin-bottom:30px;">
+                <a id="create-us-button" class="btn btn-success" href="javascript:showCreationModal();">Ajouter une User Story</a>
+              </div>
+            </div>
+          <%}%>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Identifiant</th>
+                <th scope="col">Description</th>
+                <th scope="col">Niveau de difficulté</th>
+                <th scope="col">Priorité</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="us-list-body">
+              <%backlog.forEach(function(userStory){ %>
+                <tr>
+                  <td><%= userStory.id %></td>
+                  <td><%= userStory.description %></td>
+                  <td><%= userStory.difficulty %></td>
+                  <td><%= userStory.priority %></td>
+                  <td><a id="modify-us-button" class="btn btn-info" href="javascript:showModificationModal();">Modifier</a></td>
+                  <td><a id="delete-us-button" class="btn btn-danger" href="javascript:showDeletionModal();">Supprimer</a></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>  
+      </main>
+
+      <!-- Creation Modal -->
+      <div class="modal fade" id="creation-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Ajouter une User Story</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="addUSForm" method="post" action="userStory" class="modal-body">
+              <label for="inputDescription">Description</label>
+              <input type="text" id="form_us_desc" class="form-control" placeholder="Description" required  name="usDesc">
+              <label for="inputDiffLevel">Niveau de difficulté</label>
+              <input type="text" id="form_us_diff" class="form-control" placeholder="Difficulté" required  name="usDiff">
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+              <button type="button" class="btn btn-success" onclick="$('#addUSForm').submit();">Valider</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+          function showCreationModal(){
+            $('#creation-modal').modal('show');
+          }
+      </script>
+
+  </body>
+</html>

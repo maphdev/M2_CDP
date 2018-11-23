@@ -6,7 +6,14 @@ let ProjectSchema = new Schema({
     description: String,
     durationSprint: Number,
     startingDay: String,
-    devList: [String]
+    devList: [String],
+    backlog : [{
+        id: Number,
+        description: String,
+        difficulty: Number,
+        priority: String
+    }],
+    usCount : Number
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);
