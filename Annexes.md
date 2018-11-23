@@ -120,6 +120,15 @@ Les fichiers d'initialisation du serveur et de déploiement de l'application se 
      "durationSprint" : 21,
      "startingDay" : "06-11-2018",
      "devList" : [ "9NVz1C5OmRYJnLAV8wrU1Nxyflm1", "jgsGNTRHJEYBqcs6NZ4ntT5bYOK2" ],
+     "backlog": [
+        {
+            "_id": {
+                "$oid": "5bf819b03e4d9952c27e473a"
+            },
+            "id": 1,
+            "description": "aaaaa",
+            "difficulty": 1
+        }
    }
  },
  "users" : {

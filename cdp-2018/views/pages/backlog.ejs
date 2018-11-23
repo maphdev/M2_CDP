@@ -42,13 +42,15 @@
                   <td><%= userStory.description %></td>
                   <td><%= userStory.difficulty %></td>
                   <td><%= userStory.priority %></td>
-                  <td><a id="modify-us-button" class="btn btn-info" href="javascript:showModificationModal();">Modifier</a></td>
-                  <td><a id="delete-us-button" class="btn btn-danger" href="javascript:showDeletionModal();">Supprimer</a></td>
+                  <td><a id="modify-us-button" class="btn btn-danger" href="javascript:showModificationModal();">Modifier</a></td>
+                  <form method="post" action="/deleteUserStory">
+                    <td><button type="submit" value='<%= userStory._id %>' class="btn btn-info" name="idUS">Supprimer</td>
+                  </form>
                 </tr>
               <% }) %>
             </tbody>
           </table>
-        </div>  
+        </div>
       </main>
 
       <!-- Creation Modal -->

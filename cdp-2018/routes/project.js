@@ -143,6 +143,20 @@ router.route('/addDevToProject')
       });
     });
 
+
+    router.route('/deleteProject')
+      .get(async function(req, res) {
+        let projectId = req.session.projectId;
+        await cf.mongoose.connect(cf.dbURL);
+        await cf.Project.deleteOne({_id: projectId}, function(err, project) {
+          if (err) {
+            res.json({status: 500, error: err});
+          }
+          res.redirect('/');
+          cf.mongoose.disconnect();
+        });
+      });
+
 router.route('/backlog')
   .get(async function(req, res){
     let projectId = req.session.projectId;
@@ -160,7 +174,7 @@ router.route('/userStory')
   .post(async function(req, res) {
     var count = 0;
     let projectId = req.session.projectId;
-    
+
     await cf.mongoose.connect(cf.dbURL);
 
     cf.Project.findOne({_id: projectId}, function(err, project) {
@@ -172,18 +186,18 @@ router.route('/userStory')
 
     count = count + 1;
 
-    cf.Project.findOneAndUpdate({_id: projectId}, 
-      {$push: {"backlog": {id: count, description: req.body.usDesc, difficulty: req.body.usDiff}}}, 
-      {upsert:true}, 
+    cf.Project.findOneAndUpdate({_id: projectId},
+      {$push: {"backlog": {id: count, description: req.body.usDesc, difficulty: req.body.usDiff}}},
+      {upsert:true},
       function(err, project) {
       if (err) {
         res.json({status: 500, error: err});
       }
     });
 
-    cf.Project.findOneAndUpdate({_id: projectId}, 
-      {usCount: count}, 
-      {upsert:true}, 
+    cf.Project.findOneAndUpdate({_id: projectId},
+      {usCount: count},
+      {upsert:true},
       function(err, project) {
       if (err) {
         res.json({status: 500, error: err});
@@ -191,6 +205,23 @@ router.route('/userStory')
       res.redirect('backlog');
       cf.mongoose.disconnect();
     });
-
   });
+
+  router.route('/deleteUserStory')
+    .post(async function(req, res){
+      let projectId = req.session.projectId;
+      let idUS = req.body.idUS;
+
+      await cf.mongoose.connect(cf.dbURL);
+
+      await cf.Project.findOneAndUpdate({_id: projectId}, {$pull: {"backlog": {_id: idUS}}}, function(err, project) {
+        if (err) {
+          res.json({status: 500, error: err});
+        }
+        res.redirect('/backlog');
+        cf.mongoose.disconnect();
+      }).catch(function(err){
+        console.log(err);
+      });
+    })
 module.exports = router;

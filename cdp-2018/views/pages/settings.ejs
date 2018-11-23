@@ -37,7 +37,7 @@
                    <!--<div class="col-md list-group-item list-group-item-action"><%= dev %></div>-->
                  <% }) %>
                  <%if(locals.userId != null){%>
-                   <button class="col-md list-group-item list-group-item-info list-group-item-action" onclick="javascript:showModal();">Ajouter <i id="addIcon" class="fas fa-plus-circle"></i></button>
+                   <button class="col-md list-group-item list-group-item-info list-group-item-action" onclick="javascript:showModalAddDev();">Ajouter <i id="addIcon" class="fas fa-plus-circle"></i></button>
                  <%}%>
                </div>
               </div>
@@ -74,12 +74,21 @@
            </div>
          </form>
          <br><br>
+         <div class="container">
+           <% if(locals.userId != null) { %>
+             <div class="row">
+               <div class="col-12 text-center">
+                 <button id="delete-project" class="btn btn-danger" onclick="javascript:showModalDeleteProject();">Supprimer le projet</button>
+               </div>
+             </div>
+           <%}%>
+         </div>
        </div>
        </div>
       </div>
     </main>
 
-    <!-- Modal -->
+    <!-- Modal ajout dev -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -101,6 +110,27 @@
       </div>
     </div>
 
+    <!-- Modal "Are you sure" pour la suppression d'un projet -->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Voulez-vous vraiment supprimer ce projet ?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>La suppression d'un projet est irréversible.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+            <a href="/deleteProject" class="btn btn-danger" style="color: white; !important">Supprimer ce projet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <%if(locals.userId != null){%>
       <script>
         $("input").prop('disabled', false);
@@ -113,8 +143,12 @@
           }
         });
 
-        function showModal(){
+        function showModalAddDev(){
           $('#modal').modal('show');
+        }
+
+        function showModalDeleteProject(){
+          $('#modal2').modal('show');
         }
       </script>
     <%}%>
