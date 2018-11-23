@@ -29,10 +29,15 @@ describe('Login', () => {
         await page.goto(baseURL);
         await page.waitFor('#menu-connect');
         await page.click("#menu-connect");
+        await page.waitFor('#form_email');
         await page.type("#form_email", user.mail);
+        await page.waitFor('#form_password');
         await page.type("#form_password", user.password);
         await page.waitFor('#form_button');
         await page.click("#form_button");
+
+        await page.waitFor('#menu-connect');
+        await page.click("#menu-connect");
     })
 })
 
@@ -40,3 +45,6 @@ describe('Login', () => {
 afterAll(() => {
       browser.close();
   })
+
+
+  jest.setTimeout(10000);
