@@ -1,3 +1,30 @@
+# Lancer les tests localement
+
+Il est possible de lancer les tests E2E réalisés avec Puppeteer (présents dans le répertoire `cdp-2018/__tests__`), grâce au test-runner Jest. Pour cela il suffit de taper les commandes suivantes :
+```
+npm install
+```
+Cela a pour effet d'installer toutes les dépendances nécessaires au bon déroulement des tests.
+Et enfin :
+```
+npm test
+```
+Ce qui va lancer Jest qui va à son tour chercher le répertoire `__tests__` qui contient tous nos tests E2E.
+
+# Automatisation des tests
+
+Nous utilisons TravisCI, un outil d'intégration continue, pour automatiser nos tests. Nous avons tenté de lancer les commandes précisées ci-dessus, mais malheureusement, il semble y avoir quelques erreurs avec `npm`. Nous espérons pouvoir réussir l'automatisation des tests E2E lors du prochain sprint.
+
+Néanmoins, avec TravisCI, nous testons le bon déploiement de notre application avec Docker. Vous pourrez trouver ci-dessous les résultats des test E2E effectués localement, ainsi que la rédaction d'une grande partie des tests.
+
+# Résultats des Tests E2E en local
+
+| Identifiant | Description | Date de dernière exécution | Résultat de dernière exécution |
+|:-----------:|:-----------:|:--------------------------:|:------------------------------:|
+| #US2-1 | Login | 23/11/2018 | Success |
+| #US2-2 | Logout | 23/11/2018 | Success |
+| #US3 | New project | 23/11/2018 | Success |
+
 # Écriture des tests
 
 ## Sprint 1
@@ -261,14 +288,3 @@ __Prérequis :__ Être connecté (Test 2) & Un projet dans la base de données (
 |:--------------:|:------:|:----------------:|
 |  |  |  |
 -->
-
-
-## Résultats des Tests E2E
-
-| Identifiant | Description | Date de dernière exécution | Résultat de dernière exécution |
-|:-----------:|:-----------:|:--------------------------:|:------------------------------:|
-| #US2-1 | Login | 23/11/2018 | Success |
-| #US2-2 | Logout | 23/11/2018 | Success |
-| #US3 | New project | 23/11/2018 | Success |
-
-|  |  |  |  |
