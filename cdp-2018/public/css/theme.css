@@ -54,6 +54,8 @@ nav {
   min-width: 786px;
   line-height: 60px;
   background-color: #034e76;
+  position: fixed;
+  top: 0;
 }
 
 nav ul {
@@ -101,7 +103,7 @@ nav ul li a:hover {
 /* The side navigation menu */
 
 .sidenav-logo {
-  margin: 15px;
+  margin: -10px 0px 0px 15px;
   color: #17a2b8;
   position: fixed; /* Stay in place */
 }
@@ -157,14 +159,18 @@ nav ul li a:hover {
 
 /* when there is only a menu */
 #main-menu {
-  margin-top: 30px;
+  margin-top: 120px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main-project {
     transition: margin-left .5s;
-    margin: 20px 0px 20px 20px;
+    margin: 110px 0px 20px 20px;
     margin-left: 250px;
 }
 
 a:-webkit-any-link { text-decoration: none; }
+
+.to-delete:hover {
+  color: red;
+}

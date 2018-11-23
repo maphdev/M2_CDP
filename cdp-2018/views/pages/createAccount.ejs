@@ -42,7 +42,7 @@
 
     <script>
       // test form's validity
-      $('#form').on('change', ':input', function(e) {
+      $('#form').on('input', ':input', function(e) {
         if($('#form_username').is(":valid") && $('#form_email').is(":valid") && $('#form_password').is(":valid")) {
           $('#form_button').prop('disabled', false);
         } else {
