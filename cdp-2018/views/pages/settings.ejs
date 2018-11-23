@@ -2,6 +2,13 @@
 <html lang="fr">
   <head>
       <% include ../partials/head.ejs %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous" defer></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" defer></script>
+      <style>
+      .list-group{
+           flex-direction: row;
+       }
+      </style>
   </head>
   <body>
 
@@ -12,41 +19,103 @@
     <% include ../partials/sidebar.ejs %>
 
     <main id="main-project">
-      <div class="container">
+      <div class="container-fluid">
+        <div class="jumbotron text-center">
+          Paramètres du projet
+        </div>
        <div class="row">
-         <form method="post" action="/settings" class="Absolute-Center is-Responsive card-form rounded" style="min-height: 550px; top: 160px; left: 250px; bottom: 100px; right: 0;">
-           <h3 class="text-center">Options</h3>
+         <div class="col align-self-start">
+           <div>
+             <label for="listDev">Liste des développeurs</label>
+
+             <div class="list-group" style="margin: 0px 15px 0px 15px;">
+               <div class="row">
+                 <% project.devList.forEach(function(dev){ %>
+                   <form method="post" action="/deleteDevFromProject">
+                     <div><button type="submit" value='<%= dev %>' class="col-md list-group-item list-group-item-action" name="id"><%= dev %> <i class="fas fa-times-circle to-delete"></i></button></div>
+                   </form>
+                   <!--<div class="col-md list-group-item list-group-item-action"><%= dev %></div>-->
+                 <% }) %>
+                 <%if(locals.userId != null){%>
+                   <button class="col-md list-group-item list-group-item-info list-group-item-action" onclick="javascript:showModal();">Ajouter <i id="addIcon" class="fas fa-plus-circle"></i></button>
+                 <%}%>
+               </div>
+              </div>
+              <div style="margin-top: 5px; color:red;">
+                <%if(typeof error != "undefined"){%>
+                  <%= error %>
+                <%}%>
+              </div>
+            </div>
+         <form method="post" action="/settings">
            <br>
            <div class="form-group">
              <label for="inputName">Nom du projet</label>
-             <input type="text" id="form_name" class="form-control" placeholder="Nom du projet" minlength="1" value='<%= project.name %>' name="name">
+             <input type="text" id="form_name" class="form-control" placeholder="Nom du projet" minlength="1" value='<%= project.name %>' name="name" disabled>
            </div>
            <div class="form-group">
              <label for="inputDescription">Description</label>
-             <input type="text" id="form_description" class="form-control" placeholder="..." value='<%= project.description %>' name="description">
+             <input type="text" id="form_description" class="form-control" placeholder="..." value='<%= project.description %>' name="description" disabled>
            </div>
            <div class="form-group">
              <label for="inputSprintLength">Durée du sprint</label>
-             <input type="number" id="form_sprint_length" class="form-control" placeholder="Durée du sprint (jours)" min="0" value='<%= project.durationSprint %>' name="durationSprint">
+             <input type="number" id="form_sprint_length" class="form-control" placeholder="Durée du sprint (jours)" min="0" value='<%= project.durationSprint %>' name="durationSprint" disabled>
            </div>
            <div class="form-group">
              <label for="inputStartDay">Date de début du sprint</label>
-             <input type="text" id="form_start_day" class="form-control" placeholder="jj-mm-aaaa" value='<%= project.startingDay %>' name="startingDay">
+             <input type="text" id="form_start_day" class="form-control" placeholder="jj-mm-aaaa" value='<%= project.startingDay %>' name="startingDay" disabled>
            </div>
            <br>
-           <%if(locals.userId != null){%>
-             <input type="submit" value="Valider" class="btn btn-info" id="modify_button">
-           <%}%>
-           <a class="btn btn-danger" id="cancel_button" href="/project">Annuler</a>
+           <div>
+             <%if(locals.userId != null){%>
+               <input type="submit" value="Valider" class="btn btn-info" id="modify_button">
+             <%}%>
+             <a class="btn btn-danger" id="cancel_button" href="/project">Annuler</a>
+           </div>
          </form>
+         <br><br>
+       </div>
        </div>
       </div>
     </main>
 
-    <%if(locals.userId == null){%>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Ajouter un utilisateur au projet</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="addDevForm" method="post" action="addDevToProject" class="modal-body">
+            <label for="inputEmail">Addresse Email</label>
+            <input type="email" id="form_email" class="form-control" placeholder="adresse@domaine.com" required  name="devMail">
+          </form>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button  id="form_button" type="button" class="btn btn-info" onclick="$('#addDevForm').submit();" disabled>Ajouter l'utilisateur</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%if(locals.userId != null){%>
       <script>
-        $("input").prop('disabled', true);
-        $("#modify_button").hide();
+        $("input").prop('disabled', false);
+
+        $('#addDevForm').on('input', ':input', function(e) {
+          if($('#form_email').is(":valid")) {
+            $('#form_button').prop('disabled', false);
+          } else {
+            $('#form_button').prop('disabled', true);
+          }
+        });
+
+        function showModal(){
+          $('#modal').modal('show');
+        }
       </script>
     <%}%>
 
