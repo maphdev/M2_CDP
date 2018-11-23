@@ -1,6 +1,8 @@
 
 \.vscode/settings\.json
 
-V0\.1\.0/node_modules/
 
-V0\.1\.0/package-lock\.json
+
+cdp-2018/package-lock\.json
+
+cdp-2018/node_modules/
