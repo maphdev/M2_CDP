@@ -11,8 +11,9 @@ before_install:
 
 install:
  - docker build -t myapp .
- - docker run -d -p 8080:8080 --name myapp myapp
+ - docker run -d -p 8081:8080 --name myapp myapp
 
 script:
  - docker ps | grep -i myapp
- - npm test
+ - npm test login.js
+ - npm test logout.js
