@@ -19,6 +19,9 @@ let ProjectSchema = new Schema({
         tasks : [{
           id: String,
           description: String,
+          cost: String,
+          dependencies: String,
+          link_to_us: String,
           state: String
         }]
     }],

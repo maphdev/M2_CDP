@@ -286,8 +286,49 @@ router.route('/userStory')
   });
 
   router.route('/sprint/:id')
-    .get(function(req, res){
-      console.log(req.params.id);
+    .get(async function(req, res){
+      let projectId = req.session.projectId;
+      let idSprint = req.params.id;
+
+      await cf.mongoose.connect(cf.dbURL);
+      await cf.Project.findOne({_id: projectId}, function(err, project) {
+        if (err) {
+          res.json({status: 500, error: err});
+        }
+        res.render('pages/sprint', {project: project, sprint: project.sprints[idSprint-1]});
+        cf.mongoose.disconnect();
+      }).catch(function(err){
+        console.log(err);
+      });
   });
+
+  router.route('/sprint/:id/createTask')
+    .post(async function(req, res){
+      let projectId = req.session.projectId;
+      let idSprint = req.params.id;
+
+      let task = {
+        id: req.body.taskId,
+        description: req.body.taskDesc,
+        cost: req.body.taskCost,
+        dependencies: req.body.taskDep,
+        link_to_us: req.body.taskLinkUs,
+        state: req.body.taskState
+      };
+
+      await cf.mongoose.connect(cf.dbURL);
+
+      await cf.Project.update({_id: projectId, 'sprints.id': idSprint},
+        {$addToSet: {"sprints.$.tasks": task}},
+        {upsert:true},
+        function(err, project) {
+        if (err) {
+          res.json({status: 500, error: err});
+        } else {
+          res.redirect('/sprint/' + idSprint);
+          cf.mongoose.disconnect();
+        }
+      });
+    });
 
 module.exports = router;

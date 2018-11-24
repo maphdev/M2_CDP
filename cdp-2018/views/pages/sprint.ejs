@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <% include ../partials/head.ejs %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous" defer></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" defer></script>
+  </head>
+  <body>
+
+    <header>
+        <% include ../partials/menu.ejs %>
+    </header>
+
+    <sidebar>
+        <% include ../partials/sidebar.ejs %>
+    </sidebar>
+
+    <!-- Content -->
+    <main id="main-project">
+        <div class="container-fluid">
+          <h2 class="jumbotron text-center">Liste des tâches du sprint <%= sprint.id %></h2>
+          <% if(locals.userId != null) { %>
+            <div class="row">
+              <div class="col-12 text-center" style="margin-bottom:30px;">
+                <a class="btn btn-info" href="javascript:showCreationModal();">Ajouter une tâche</a>
+              </div>
+            </div>
+          <%}%>
+          <!-- TO DO tab -->
+          <h3>TO DO</h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Identifiant</th>
+                <th scope="col">Description</th>
+                <th scope="col">Chiffrage (j/h)</th>
+                <th scope="col">Dépendances</th>
+                <th scope="col">Lien US</th>
+              </tr>
+            </thead>
+            <tbody id="us-list-body">
+              <%sprint.tasks.forEach(function(task){ %>
+                <% if(task.state == "TO DO") { %>
+                <tr>
+                  <td><%= task.id %></td>
+                  <td><%= task.description %></td>
+                  <td><%= task.cost %></td>
+                  <td><%= task.dependencies %></td>
+                  <td><%= task.link_to_us %></td>
+                </tr>
+                <%}%>
+              <% }) %>
+            </tbody>
+          </table>
+          <br>
+          <!-- ON GOING tab -->
+          <h3>ONE GOING</h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Identifiant</th>
+                <th scope="col">Description</th>
+                <th scope="col">Chiffrage (j/h)</th>
+                <th scope="col">Dépendances</th>
+                <th scope="col">Lien US</th>
+              </tr>
+            </thead>
+            <tbody id="us-list-body">
+              <%sprint.tasks.forEach(function(task){ %>
+                <% if(task.state == "ON GOING") { %>
+                <tr>
+                  <td><%= task.id %></td>
+                  <td><%= task.description %></td>
+                  <td><%= task.cost %></td>
+                  <td><%= task.dependencies %></td>
+                  <td><%= task.link_to_us %></td>
+                </tr>
+                <%}%>
+              <% }) %>
+            </tbody>
+          </table>
+          <br>
+          <!-- DONE tab -->
+          <h3>DONE</h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Identifiant</th>
+                <th scope="col">Description</th>
+                <th scope="col">Chiffrage (j/h)</th>
+                <th scope="col">Dépendances</th>
+                <th scope="col">Lien US</th>
+              </tr>
+            </thead>
+            <tbody id="us-list-body">
+              <%sprint.tasks.forEach(function(task){ %>
+                <% if(task.state == "DONE") { %>
+                <tr>
+                  <td><%= task.id %></td>
+                  <td><%= task.description %></td>
+                  <td><%= task.cost %></td>
+                  <td><%= task.dependencies %></td>
+                  <td><%= task.link_to_us %></td>
+                </tr>
+                <%}%>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+      <!-- Creation Modal -->
+      <div class="modal fade" id="creation-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Ajouter une tâche</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="addTaskForm" method="post" action="/sprint/<%= sprint.id %>/createTask" class="modal-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputIdentifiant">Identifiant</label>
+                  <input type="text" id="form_task_id" class="form-control" placeholder="Identifiant" required  name="taskId">
+                </div>
+                <div class="form-group col-md-9">
+                  <label for="inputDescription">Description</label>
+                  <textarea type="text" id="form_task_desc" class="form-control" placeholder="Description" required  name="taskDesc" style="resize: vertical; !important"></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputCost">Chiffrage</label>
+                  <input type="text" id="form_task_cost" class="form-control" placeholder="Chiffrage (j/h)" required  name="taskCost">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputDependencies">Dépendances</label>
+                  <input type="text" id="form_task_dep" class="form-control" placeholder="Dépendances" required  name="taskDep">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputLinkUs">Lien US</label>
+                  <input type="text" id="form_task_link_us" class="form-control" placeholder="Lien US" required  name="taskLinkUs">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputState">Avancement</label>
+                  <select id="form_task_state" class="form-control" required name="taskState">
+                    <option selected>TO DO</option>
+                    <option>ON GOING</option>
+                    <option>DONE</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+              <button type="button" class="btn btn-info" onclick="$('#addTaskForm').submit();">Valider</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function showCreationModal(){
+          $('#creation-modal').modal('show');
+        }
+
+        // auto-resize input form
+        var textarea = document.querySelector('textarea');
+        textarea.addEventListener('keydown', autosize);
+        function autosize(){
+          var el = this;
+          setTimeout(function(){
+            el.style.cssText = 'height:auto; padding:0';
+            // for box-sizing other than "content-box" use:
+            // el.style.cssText = '-moz-box-sizing:content-box';
+            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+          },0);
+        }
+      </script>
+  </body>
+</html>
