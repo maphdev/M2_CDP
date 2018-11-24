@@ -13,7 +13,16 @@ let ProjectSchema = new Schema({
         difficulty: String,
         priority: String
     }],
-    usCount : Number
+    usCount : Number,
+    sprints : [{
+        id: Number,
+        tasks : [{
+          id: String,
+          description: String,
+          state: String
+        }]
+    }],
+    sprintsCount : Number
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);

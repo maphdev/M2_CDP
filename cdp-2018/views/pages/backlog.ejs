@@ -15,12 +15,13 @@
         <% include ../partials/sidebar.ejs %>
     </sidebar>
 
-    <main id="main-menu">
-        <div class="container">
+    <main id="main-project">
+        <div class="container-fluid">
+          <h2 class="jumbotron text-center">Liste des projets</h2>
           <% if(locals.userId != null) { %>
             <div class="row">
               <div class="col-12 text-center" style="margin-bottom:30px;">
-                <a id="create-us-button" class="btn btn-success" href="javascript:showCreationModal();">Ajouter une User Story</a>
+                <a id="create-us-button" class="btn btn-info" href="javascript:showCreationModal();">Ajouter une User Story</a>
               </div>
             </div>
           <%}%>
@@ -31,8 +32,10 @@
                 <th scope="col">Description</th>
                 <th scope="col">Niveau de difficulté</th>
                 <th scope="col">Priorité</th>
+                <%if(locals.userId != null){%>
                 <th></th>
                 <th></th>
+                <% } %>
               </tr>
             </thead>
             <tbody id="us-list-body">
@@ -42,10 +45,12 @@
                   <td><%= userStory.description %></td>
                   <td><%= userStory.difficulty %></td>
                   <td><%= userStory.priority %></td>
-                  <td><a id="modify-us-button" class="btn btn-danger" href="javascript:showModificationModal();">Modifier</a></td>
+                  <%if(locals.userId != null){%>
+                  <td><button onclick="javascript:showModifyModal(this.value);" value='<%= userStory._id %>%%%<%= userStory.id %>%%%<%= userStory.description %>%%%<%= userStory.difficulty %>%%%<%= userStory.priority %>' class="btn btn-info" name="idUS">Modifier</td>
                   <form method="post" action="/deleteUserStory">
-                    <td><button type="submit" value='<%= userStory._id %>' class="btn btn-info" name="idUS">Supprimer</td>
+                    <td><button type="submit" value='<%= userStory._id %>' class="btn btn-danger" name="idUS">Supprimer</td>
                   </form>
+                  <% } %>
                 </tr>
               <% }) %>
             </tbody>
@@ -71,7 +76,35 @@
             </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-              <button type="button" class="btn btn-success" onclick="$('#addUSForm').submit();">Valider</button>
+              <button type="button" class="btn btn-info" onclick="$('#addUSForm').submit();">Valider</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modification Modal -->
+      <div class="modal fade" id="modification-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modifier une User Story</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="modifyUsForm" method="post" action="/modifyUserStory" class="modal-body">
+              <input id="modif_id" type="text" class="form-control" required  name="id" hidden>
+              <input id="modif_idUs" type="text" class="form-control" required  name="idUs" hidden>
+              <label for="inputDescription">Description</label>
+              <input id="modif_desc" type="text" class="form-control" placeholder="Description" required  name="usDesc">
+              <label for="inputDiffLevel">Niveau de difficulté</label>
+              <input id="modif_diff" type="text" class="form-control" placeholder="Difficulté" required  name="usDiff">
+              <label for="inputPriorité">Priorité</label>
+              <input id="modif_prio" type="text" class="form-control" placeholder="Priorité" required  name="usPrio">
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+              <button id="modif_button" type="button" class="btn btn-info" onclick="$('#modifyUsForm').submit();">Valider</button>
             </div>
           </div>
         </div>
@@ -81,7 +114,16 @@
           function showCreationModal(){
             $('#creation-modal').modal('show');
           }
-      </script>
 
+          function showModifyModal(line){
+            let us = line.split("%%%");
+            $('#modification-modal').modal('show');
+            $('#modif_id').val(us[0]);
+            $('#modif_idUs').val(us[1]);
+            $('#modif_desc').val(us[2]);
+            $('#modif_diff').val(us[3]);
+            $('#modif_prio').val(us[4]);
+          }
+      </script>
   </body>
 </html>

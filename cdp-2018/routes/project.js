@@ -18,7 +18,8 @@ router.route('/createProject')
     project.startingDay = req.body.startingDay;
     project.devList = req.session.userMail;
     project.usCount = 0;
-    project.backlog = [];
+    project.sprintsCount = 1;
+    project.sprints = [{id: 1, tasks: []}];
     await project.save(function(err) {
       if (err) {
         res.send({status: 500, error: err});
@@ -172,6 +173,40 @@ router.route('/backlog')
 
 router.route('/userStory')
   .post(async function(req, res) {
+
+    let projectId = req.session.projectId;
+
+    await cf.mongoose.connect(cf.dbURL);
+
+    cf.Project.findOne({_id: projectId}, function(err, project) {
+      if (err) {
+        res.json({status: 500, error: err});
+      }
+      let count = project.usCount +1;
+
+      cf.Project.findOneAndUpdate({_id: projectId},
+        {$push: {"backlog": {id: count, description: req.body.usDesc, difficulty: req.body.usDiff}}},
+        {upsert:true},
+        function(err, project) {
+        if (err) {
+          res.json({status: 500, error: err});
+        }
+
+        cf.Project.findOneAndUpdate({_id: projectId},
+          {$inc: {usCount: count}},
+          {upsert:true},
+          function(err, project) {
+          if (err) {
+            res.json({status: 500, error: err});
+          }
+          res.redirect('backlog');
+          cf.mongoose.disconnect();
+        });
+      });
+    });
+
+
+    /*
     var count = 0;
     let projectId = req.session.projectId;
 
@@ -204,7 +239,7 @@ router.route('/userStory')
       }
       res.redirect('backlog');
       cf.mongoose.disconnect();
-    });
+    });*/
   });
 
   router.route('/deleteUserStory')
@@ -223,5 +258,36 @@ router.route('/userStory')
       }).catch(function(err){
         console.log(err);
       });
-    })
+    });
+
+  router.route('/modifyUserStory')
+    .post(async function(req, res){
+      let projectId = req.session.projectId;
+      let id = req.body.id;
+
+      let idUs = req.body.idUs;
+        let update = {
+        id: idUs,
+        description: req.body.usDesc,
+        difficulty: req.body.usDiff,
+        priority: req.body.usPrio
+      };
+
+      await cf.mongoose.connect(cf.dbURL);
+      await cf.Project.findOneAndUpdate({_id: projectId, 'backlog._id': id}, {'backlog.$': update}, {upsert:true}, function(err, project) {
+      if (err) {
+        res.json({status: 500, error: err});
+      }
+      res.redirect('/backlog');
+      cf.mongoose.disconnect();
+    }).catch(function(err){
+      console.log(err);
+    });
+  });
+
+  router.route('/sprint/:id')
+    .get(function(req, res){
+      console.log(req.params.id);
+  });
+
 module.exports = router;
