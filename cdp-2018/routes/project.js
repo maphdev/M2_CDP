@@ -283,6 +283,38 @@ router.route('/sprint/createSprint')
   });
 });
 
+router.route('/sprint/:id/deleteSprint')
+  .get(async function(req, res){
+    let projectId = req.session.projectId;
+    let idSprint = req.params.id;
+
+    await cf.mongoose.connect(cf.dbURL);
+
+    await cf.Project.findOneAndUpdate({_id: projectId}, {$pull: {"sprints": {id: idSprint}}}, function(err, project) {
+      if (err) {
+        res.json({status: 500, error: err});
+      }
+
+      cf.Project.findOneAndUpdate({_id: projectId}, {$inc: {sprintsCount: -1}}, {upsert:true}, async function(err, project) {
+        if (err) {
+          res.json({status: 500, error: err});
+        }
+      });
+    })
+    .then(function(){
+      if(idSprint == 1){
+        res.redirect('/project');
+      } else {
+        let newIdSprint = idSprint-1;
+        res.redirect('/sprint/' + newIdSprint);
+      }
+      cf.mongoose.disconnect();
+    })
+    .catch(function(err){
+      console.log(err);
+    });
+});
+
 router.route('/sprint/:id')
   .get(async function(req, res){
     let projectId = req.session.projectId;
