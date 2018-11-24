@@ -88,7 +88,7 @@
             </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-              <button type="button" class="btn btn-info" onclick="$('#addUSForm').submit();">Valider</button>
+              <button type="button" class="btn btn-info" onclick="this.disabled=true;this.value='Submitting...';$('#addUSForm').submit();">Valider</button>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@
             </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-              <button id="modif_button" type="button" class="btn btn-info" onclick="$('#modifyUsForm').submit();">Valider</button>
+              <button id="modif_button" type="button" class="btn btn-info" onclick="this.disabled=true;this.value='Submitting...';$('#modifyUsForm').submit();">Valider</button>
             </div>
           </div>
         </div>

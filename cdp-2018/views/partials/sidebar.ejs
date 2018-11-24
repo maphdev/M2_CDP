@@ -4,11 +4,9 @@
      <li><a href="/backlog" style="text-decoration: none;">Backlog</a></li>
      <li><a href="" style="text-decoration: none;">Sprints</a>
        <ul class="submenu">
-         <!--
-         <li><a href="" style="text-decoration: none;">Sprint 1</a></li>
-         <li><a href="" style="text-decoration: none;">Sprint 2</a></li>
-         <li><a href="" style="text-decoration: none;">Sprint 3</a></li>
-         -->
+         <% if(locals.userId != null) { %>
+           <li><a href="/sprint/createSprint" style="text-decoration: none;">Créer un sprint &nbsp;<i class="fas fa-plus-circle"></i></a></li>
+         <%}%>
          <% project.sprints.forEach(function(sprint){ %>
            <form method="post" action="/deleteDevFromProject">
              <li><a href="/sprint/<%= sprint.id %>" style="text-decoration: none;">Sprint <%= sprint.id %></a></li>
@@ -21,14 +19,6 @@
      <li><a href="" style="text-decoration: none;">Burn Down Chart</a></li>
      <li><a href="/settings" style="text-decoration: none; position:fixed; bottom:0; width: 250px;"><i class="fas fa-cog"></i> Paramètres</a></li>
    </ul>
-   <!--
-   <a href="/backlog" style="text-decoration: none;">Backlog</a>
-   <a href="#" style="text-decoration: none;">Sprints</a>
-   <a href="#" style="text-decoration: none;">Gestion des releases</a>
-   <a href="#" style="text-decoration: none;">Gestion des tests</a>
-   <a href="#" style="text-decoration: none;">Burn Down Chart</a>
-   <a href="/settings" style="text-decoration: none;">Paramètres du projet</a>
-   -->
 </div>
 
 <span onclick="openNav()" id="sidenav-logo"><i class="fas fa-angle-double-right fa-3x sidenav-logo"></i></span>

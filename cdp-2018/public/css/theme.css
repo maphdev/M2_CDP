@@ -179,7 +179,7 @@ nav ul li a:hover {
 
 .mainmenu li:hover .submenu {
   display: block;
-  max-height: 200px;
+  max-height: 1000px;
 }
 
 /*
