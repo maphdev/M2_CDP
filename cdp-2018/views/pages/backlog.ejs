@@ -17,7 +17,7 @@
 
     <main id="main-project">
         <div class="container-fluid">
-          <h2 class="jumbotron text-center">Liste des projets</h2>
+          <h2 class="jumbotron text-center">Liste des US</h2>
           <% if(locals.userId != null) { %>
             <div class="row">
               <div class="col-12 text-center" style="margin-bottom:30px;">
@@ -69,10 +69,22 @@
               </button>
             </div>
             <form id="addUSForm" method="post" action="userStory" class="modal-body">
-              <label for="inputDescription">Description</label>
-              <input type="text" id="form_us_desc" class="form-control" placeholder="Description" required  name="usDesc">
-              <label for="inputDiffLevel">Niveau de difficulté</label>
-              <input type="text" id="form_us_diff" class="form-control" placeholder="Difficulté" required  name="usDiff">
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="inputDescription">Description</label>
+                  <textarea type="text" id="form_us_desc" class="form-control" placeholder="Description"  name="usDesc" style="min-height: 40px; resize: vertical; !important"></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputDiffLevel">Niveau de difficulté</label>
+                  <select id="form_us_diff" class="form-control" name="usDiff">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>5</option>
+                    <option>7</option>
+                  </select>
+                </div>
+              </div>
             </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
@@ -93,14 +105,32 @@
               </button>
             </div>
             <form id="modifyUsForm" method="post" action="/modifyUserStory" class="modal-body">
-              <input id="modif_id" type="text" class="form-control" required  name="id" hidden>
-              <input id="modif_idUs" type="text" class="form-control" required  name="idUs" hidden>
-              <label for="inputDescription">Description</label>
-              <input id="modif_desc" type="text" class="form-control" placeholder="Description" required  name="usDesc">
-              <label for="inputDiffLevel">Niveau de difficulté</label>
-              <input id="modif_diff" type="text" class="form-control" placeholder="Difficulté" required  name="usDiff">
-              <label for="inputPriorité">Priorité</label>
-              <input id="modif_prio" type="text" class="form-control" placeholder="Priorité" required  name="usPrio">
+              <div class="form-row">
+                <input id="modif_id" type="text" class="form-control"  name="id" hidden>
+                <input id="modif_idUs" type="text" class="form-control"  name="idUs" hidden>
+                <div class="form-group col-md-12">
+                  <label for="inputDescription">Description</label>
+                  <textarea type="text" id="modif_desc" class="form-control" placeholder="Description"  name="usDesc" style="min-height: 40px; resize: vertical; !important"></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputDiffLevel">Niveau de difficulté</label>
+                  <select id="modif_diff" class="form-control" name="usDiff">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>5</option>
+                    <option>7</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPriorité">Priorité</label>
+                  <select id="modif_prio" class="form-control" name="usPrio">
+                    <option selected>LOW</option>
+                    <option>MEDIUM</option>
+                    <option>HIGH</option>
+                  </select>
+                </div>
+              </div>
             </form>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
@@ -111,6 +141,7 @@
       </div>
 
       <script>
+          // show modals
           function showCreationModal(){
             $('#creation-modal').modal('show');
           }
@@ -123,6 +154,19 @@
             $('#modif_desc').val(us[2]);
             $('#modif_diff').val(us[3]);
             $('#modif_prio').val(us[4]);
+          }
+
+          // auto-resize input form
+          var textarea = document.querySelector('textarea');
+          textarea.addEventListener('keydown', autosize);
+          function autosize(){
+            var el = this;
+            setTimeout(function(){
+              el.style.cssText = 'height:auto; padding:0';
+              // for box-sizing other than "content-box" use:
+              // el.style.cssText = '-moz-box-sizing:content-box';
+              el.style.cssText = 'height:' + el.scrollHeight + 'px';
+            },0);
           }
       </script>
   </body>
