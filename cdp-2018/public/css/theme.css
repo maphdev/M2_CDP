@@ -205,6 +205,14 @@ nav ul li a:hover {
   -webkit-transition: all 0.5s ease-out;
 }
 
+#sidebar-project-name {
+  display: block;
+  text-decoration: none;
+  font-size: 36px;
+  padding: 15px;
+  color: #fff;
+  text-shadow: #111 3px 3px 10px;
+}
 
 /* when there is only a menu */
 #main-menu {
