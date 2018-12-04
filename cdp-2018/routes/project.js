@@ -171,7 +171,7 @@ router.route('/backlog')
     });
   })
 
-router.route('/userStory')
+router.route('/createUserStory')
   .post(async function(req, res) {
 
     let projectId = req.session.projectId;
