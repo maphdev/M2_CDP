@@ -1,16 +1,19 @@
 language: node_js
 node_js:
- - "node"
-
+- node
 services:
- - docker
-
+- docker
 before_install:
- - cd cdp-2018
-
+- cd cdp-2018
 install:
- - docker build -t myapp .
- - docker run -d -p 8081:8080 --name myapp myapp
-
+- docker build -t myapp .
+- docker run -d -p 8081:8080 --name myapp myapp
+addons:
+  sonarcloud:
+    organization: "glamarque-github"
+    token:
+      secure: 2ZBHFvGfbm2GPK5BO4EM8ry+N5WLzqKY7vcwM97HZ6rfxW1VRX1kVH9D48OkhN5wW5JWwZlaF2BNdeRFvpo0ZDxR3Qo18sLdwCOJkBYQgQkWXS0+b/0mB0axqQ0KnYf4Q//FhpU5Aazp5uhOg/N268RS9o9cyRfPODj9TraVikgVoJ3cogjCVlLkC9o8WM/xVJlOvn8LZJOo/Jh/Ift9M/vihnplNf4HJ0txTMxNLdrgc31IjSiiI0D3YsiIUPisBWb7uqTypJrIGSVQu6eIp+WrnLJ32aNajU4PBINwMjPJwbJ+tU5jUbDobAivGiWMy9sfcTJxeFY23QUph5cRQ/o33x7fdYDFNIsF5weakyzZSx8iFawk3K999kCE9aOw3uiWoRAuOkLHnmrbNf2wgnmQT68c4DjHMlC0bnbD1qGs6/R5+X+OLq66EgZJ5Y+iUbG9REHQi5DyXi0VPOHcpEzvYY3ukK439SX7lKfYrU5JRDmwYQnJ1h9bBLDfdq7JiCxq+psEP8KakaqU8uuuJ1MHsPpMnd309ZHux98A7TM5jWgy7uELZbW1tRukJuAb/lG2NuJFG0tZvLB9ypc9ObGZVvH4h0WKJUbmINlgkOogh2+uhZW8W7EPzutAASSLbZ22bzpP+CB455c5hV9c/a65cy95jCIeWfizyM58PpQ=
 script:
- - docker ps | grep -i myapp
+  # other script steps might be done before running the actual analysis
+  - docker ps | grep -i myapp
+  - sonar-scanner
