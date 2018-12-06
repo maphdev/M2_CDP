@@ -13,21 +13,25 @@ Ce qui va lancer Jest qui va à son tour chercher le répertoire `__tests__` qui
 
 # Automatisation des tests
 
-Nous utilisons TravisCI, un outil d'intégration continue, pour automatiser nos tests. Nous avons tenté de lancer les commandes précisées ci-dessus, mais malheureusement, il semble y avoir quelques erreurs avec `npm`. Nous espérons pouvoir réussir l'automatisation des tests E2E lors du prochain sprint.
+Nous utilisons TravisCI, un outil d'intégration continue, pour automatiser nos tests.
 
-Néanmoins, avec TravisCI, nous testons le bon déploiement de notre application avec Docker. Vous pourrez trouver ci-dessous les résultats des test E2E effectués localement, ainsi que la rédaction d'une grande partie des tests.
+Nous avons tenté d'automatiser les tests E2E, cependant des erreurs de délais dans les tests automatisés provoque l'échec du build. Nous les avons donc enlevé de TravisCI.
+
+Néanmoins, nous testons avec TravisCI le bon déploiement de notre application avec Docker.
 
 # Résultats des Tests E2E en local
 
+Ci-dessous les résultats des test E2E effectués localement :
+
 | Identifiant | Description | Date de dernière exécution | Résultat de dernière exécution |
 |:-----------:|:-----------:|:--------------------------:|:------------------------------:|
-| #US2-1 | Login | 23/11/2018 | Success |
-| #US2-2 | Logout | 23/11/2018 | Success |
-| #US3 | New project | 23/11/2018 | Success |
+| #US2-1 | Login | 06/12/2018 | Success |
+| #US2-2 | Logout | 06/12/2018 | Success |
+| #US3 | New project | 06/12/2018 | Success |
 
 # Écriture des tests
 
-## Sprint 1
+Voici l'écriture des tests de validation. Il s'agit de tests End To End (E2E).
 
 ### US#1
 En tant que __visiteur__, je peux créer un compte développeur, afin de gérer mes projets Scrum. Il faudra fournir un nom d'utilisateur, un mot de passe et une adresse email.
