@@ -1,4 +1,6 @@
-# Résumé du travail fourni
+# Résumé de CDP
+
+Ce document met en avant la réalisation des points de contrôle pour chaque artefact intervenants dans la conduite de projet
 
 ## Issues
 
@@ -56,4 +58,8 @@ Nous avons utilisé Travis afin d'__automatiser les tests__. Ce processus d'auto
 
 ## Documentation
 
-annexes
+Une __documentation du code__ a été réalisée. L'architecture de l'application, les composants, la structure du projet, la structure de la base de donnée (JSON) ainsi que d'autres informations utiles aux développeurs sont présents dans le fichier [annexes.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/annexes.md). Le code source est également commenté lorsque vraiment nécessaire.
+
+La __documentation administrateur__ se trouve dans le fichier [doc_administrateur.md](https://github.com/maphdev/M2_CDP/blob/master/cdp-2018/doc/doc_administrateur.md). Cette documentation présente les différentes méthodes de déploiement de l'application ainsi que la marche à suivre pour exécuter les tests.
+
+La __documentation utilisateur__ se trouve dans le fichier [doc_utilisateur](https://github.com/maphdev/M2_CDP/blob/master/cdp-2018/doc/doc_utilisateur.md). Cette documentation aide l'utilisateur à utiliser le logiciel.
