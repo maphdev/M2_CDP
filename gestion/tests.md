@@ -15,7 +15,7 @@ Ce qui va lancer Jest qui va à son tour chercher le répertoire `__tests__` qui
 
 Nous utilisons TravisCI, un outil d'intégration continue, pour automatiser nos tests.
 
-Nous avons tenté d'automatiser les tests E2E, cependant des erreurs de délais dans les tests automatisés provoque l'échec du build. Nous les avons donc enlevé de TravisCI.
+Nous avons tenté d'automatiser les tests E2E, cependant des erreurs de délais dans les tests automatisés provoquent l'échec du build. Nous les avons donc enlevé de TravisCI.
 
 Néanmoins, nous testons avec TravisCI le bon déploiement de notre application avec Docker.
 
