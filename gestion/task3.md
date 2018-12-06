@@ -21,7 +21,7 @@ Lien __Trello__ : ...
 | __T3_6ex__ | Réalisation du test de validation de l'US #6. | #6 |  | TO DO | 0.5 |  |
 | __T3_7ex__ | Réalisation du test de validation de l'US #7. | #7 |  | TO DO | 0.5 |  |
 | __T3_8ex__ | Réalisation du test de validation de l'US #8. | #8 |  | DONE | 0.5 | Élodie G. |
-| __T3_9ex__ | Réalisation du test de validation de l'US #9. | #9 |  | TO DO | 0.5 |  |
+| __T3_9ex__ | Réalisation du test de validation de l'US #9. | #9 |  | DONE | 0.5 | Élodie G. |
 | __T3_10ec__ | Écriture du test de validation de l'US #10. | #10 |  | DONE | 0.5 | Élodie G. |
 | __T3_10ex__ | Réalisation du test de validation de l'US #10. | #10 |  | TO DO | 0.5 |  |
 | __T3_11ec__ | Écriture du test de validation de l'US #11. | #11 |  | DONE | 0.5 | Élodie G. |
