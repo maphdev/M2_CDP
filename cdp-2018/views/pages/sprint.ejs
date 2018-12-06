@@ -29,17 +29,6 @@
           <!-- TO DO tab -->
           <h3>TO DO</h3>
           <table class="table table-striped">
-            <colgroup>
-                <col class="col-md-1">
-                <col class="col-md-5">
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <%if(locals.userId != null){%>
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <% } %>
-            </colgroup>
             <thead>
               <tr>
                 <th scope="col">Identifiant</th>
@@ -63,9 +52,9 @@
                   <td><%= task.dependencies %></td>
                   <td><%= task.link_to_us %></td>
                   <%if(locals.userId != null){%>
-                  <td><button onclick="javascript:showModifyModal(this.value);" value='<%= sprint.id %>%%%<%= task.id %>%%%<%= task.description %>%%%<%= task.cost %>%%%<%= task.dependencies %>%%%<%= task.link_to_us %>' class="btn btn-info" name="idTask">Modifier</td>
+                  <td><button onclick="javascript:showModifyModal(this.value);" value='<%= sprint.id %>%%%<%= task._id %>%%%<%= task.id %>%%%<%= task.description %>%%%<%= task.cost %>%%%<%= task.dependencies %>%%%<%= task.link_to_us %>' class="btn btn-info" name="idTask">Modifier</button></td>
                   <form method="post" action="/deleteTask">
-                    <td><button type="submit" value='<%= sprint.id %>%%%<%= task.id %>' class="btn btn-danger" name="idUS">Supprimer</td>
+                    <td><button type="submit" value='<%= sprint.id %>%%%<%= task.id %>' class="btn btn-danger" name="idUS">Supprimer</button></td>
                   </form>
                   <% } %>
                 </tr>
@@ -77,17 +66,6 @@
           <!-- ON GOING tab -->
           <h3>ON GOING</h3>
           <table class="table table-striped">
-            <colgroup>
-                <col class="col-md-1">
-                <col class="col-md-5">
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <%if(locals.userId != null){%>
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <% } %>
-            </colgroup>
             <thead>
               <tr>
                 <th scope="col">Identifiant</th>
@@ -111,7 +89,7 @@
                   <td><%= task.dependencies %></td>
                   <td><%= task.link_to_us %></td>
                   <%if(locals.userId != null){%>
-                  <td><button onclick="javascript:showModifyModal(this.value);" value='<%= sprint.id %>%%%<%= task.id %>%%%<%= task.description %>%%%<%= task.cost %>%%%<%= task.dependencies %>%%%<%= task.link_to_us %>' class="btn btn-info" name="idTask">Modifier</td>
+                  <td><button onclick="javascript:showModifyModal(this.value);" value='<%= sprint.id %>%%%<%= task._id %>%%%<%= task.id %>%%%<%= task.description %>%%%<%= task.cost %>%%%<%= task.dependencies %>%%%<%= task.link_to_us %>' class="btn btn-info" name="idTask">Modifier</td>
                   <form method="post" action="/deleteTask">
                     <td><button type="submit" value='<%= sprint.id %>%%%<%= task.id %>' class="btn btn-danger" name="idTask">Supprimer</td>
                   </form>
@@ -125,17 +103,6 @@
           <!-- DONE tab -->
           <h3>DONE</h3>
           <table class="table table-striped">
-            <colgroup>
-                <col class="col-md-1">
-                <col class="col-md-5">
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <%if(locals.userId != null){%>
-                <col class="col-md-1">
-                <col class="col-md-1">
-                <% } %>
-            </colgroup>
             <thead>
               <tr>
                 <th scope="col">Identifiant</th>
@@ -159,7 +126,7 @@
                   <td><%= task.dependencies %></td>
                   <td><%= task.link_to_us %></td>
                   <%if(locals.userId != null){%>
-                  <td><button onclick="javascript:showModifyModal(this.value);" value='<%= sprint.id %>%%%<%= task.id %>%%%<%= task.description %>%%%<%= task.cost %>%%%<%= task.dependencies %>%%%<%= task.link_to_us %>' class="btn btn-info" name="idTask">Modifier</td>
+                  <td><button onclick="javascript:showModifyModal(this.value);" value='<%= sprint.id %>%%%<%= task._id %>%%%<%= task.id %>%%%<%= task.description %>%%%<%= task.cost %>%%%<%= task.dependencies %>%%%<%= task.link_to_us %>' class="btn btn-info">Modifier</td>
                   <form method="post" action="/deleteTask">
                     <td><button type="submit" value='<%= sprint.id %>%%%<%= task.id %>' class="btn btn-danger" name="idUS">Supprimer</td>
                   </form>
@@ -230,6 +197,58 @@
         </div>
       </div>
 
+      <!-- Modification Modal -->
+      <div class="modal fade" id="modification-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modifier une tâche</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form id="modifyTaskForm" method="post" action="/sprint/<%= sprint.id %>/modifyTask" class="modal-body">
+              <input id="sprint_id" type="text" class="form-control"  name="sprintId" hidden>
+              <input id="task_uniq_id" type="text" class="form-control"  name="taskUniqId" hidden>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputIdentifiant">Identifiant</label>
+                  <input type="text" id="task_litter_id" class="form-control" placeholder="Identifiant" required  name="taskId">
+                </div>
+                <div class="form-group col-md-9">
+                  <label for="inputDescription">Description</label>
+                  <textarea type="text" id="task_description" class="form-control" placeholder="Description" required  name="taskDesc" style="resize: vertical; !important"></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputCost">Chiffrage</label>
+                  <input type="text" id="task_cost" class="form-control" placeholder="Chiffrage (j/h)" required  name="taskCost">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputDependencies">Dépendances</label>
+                  <input type="text" id="task_dependencies" class="form-control" placeholder="Dépendances" required  name="taskDep">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputLinkUs">Lien US</label>
+                  <input type="text" id="task_link_to_us" class="form-control" placeholder="Lien US" required  name="taskLinkUs">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputState">Avancement</label>
+                  <select id="form_task_state" class="form-control" required name="taskState">
+                    <option selected>TO DO</option>
+                    <option>ON GOING</option>
+                    <option>DONE</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+              <button type="button" class="btn btn-info" onclick="this.disabled=true;this.value='Submitting...';$('#modifyTaskForm').submit();">Valider</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Modal "Are you sure" pour la suppression d'un sprint -->
       <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -263,11 +282,13 @@
         function showModifyModal(line){
           let us = line.split("%%%");
           $('#modification-modal').modal('show');
-          $('#modif_id').val(us[0]);
-          $('#modif_idUs').val(us[1]);
-          $('#modif_desc').val(us[2]);
-          $('#modif_diff').val(us[3]);
-          $('#modif_prio').val(us[4]);
+          $('#sprint_id').val(us[0]);
+          $('#task_uniq_id').val(us[1]);
+          $('#task_litter_id').val(us[2]);
+          $('#task_description').val(us[3]);
+          $('#task_cost').val(us[4]);
+          $('#task_dependencies').val(us[5]);
+          $('#task_link_to_us').val(us[6]);
         }
 
         // auto-resize input form
