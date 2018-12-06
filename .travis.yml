@@ -12,10 +12,8 @@ install:
 addons:
   sonarcloud:
     organization: "maphdev-github"
-    token:
-      secure: "A8Kquwv0NMujIoOQzPhz9nob7OF6TMFhASj7pTd4IoCeL85CrsAdUdVNIFnJ+RAIVu0uNXIb7aKpKGJDVVV15znpX7KSfLX+w2FtEIFUwN3yTl9yg0asLl0MfcTNnzjTURxCRTjatkP5hn6B/dXmdqmEcJRnUkGfKCZrsUv5UwHpz6432kyrnR+RhTgdev5cgW1dqj8E47B1VALUc1bPJsM/1EUft5+QPJAZqX6DI0x58xNwLxrj9kio/4vqZFIUH7iKTfxZEgK5WowXItTu4wNEQqqRlx6yqGPMamcRoaYBF3UUnreevifCCwUcjILSuRukbHbNoSxtE98HALUWUyAiJnPZ+SNB+iTJq67Xi9B488u5mEUQDfJh2WgwTvx4EMYcwTtyyGaOPX0BUpfuchFa6QnWIbT5CCtu3CQtqDBail86BGxgfBFQfRHh0jBCm9LEbWfoMLzz5ULTux+NuiVIhT9AYM5Nn2QTnkQ0Hx6lfCO40Y3m5GxdJrNv9Y0ktLv47VCJEE6fxkfzpcGHZujm1TCvQtwnoQmE0Ipz64qqGatW8x4+TVXC+dTtLYmf2HkTh7l4bEsU9VCvZp6zsl8ouWAK//tYtXi9MpL2pcxLE5VDgatKSRHZUH0iWERSluzqAIJhCtkXag9rfUhLIH/bM6uEMSkrS0IIT8UfmME="
 
 script:
   # other script steps might be done before running the actual analysis
   - docker ps | grep -i myapp
-  - sonar-scanner
+  - sonar-scanner -Dsonar.login=${SONAR_TOKEN}
