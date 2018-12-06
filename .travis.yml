@@ -8,11 +8,13 @@ before_install:
 install:
 - docker build -t myapp .
 - docker run -d -p 8081:8080 --name myapp myapp
+
 addons:
   sonarcloud:
-    organization: "glamarque-github"
+    organization: "maphdev-github"
     token:
-      secure: 2ZBHFvGfbm2GPK5BO4EM8ry+N5WLzqKY7vcwM97HZ6rfxW1VRX1kVH9D48OkhN5wW5JWwZlaF2BNdeRFvpo0ZDxR3Qo18sLdwCOJkBYQgQkWXS0+b/0mB0axqQ0KnYf4Q//FhpU5Aazp5uhOg/N268RS9o9cyRfPODj9TraVikgVoJ3cogjCVlLkC9o8WM/xVJlOvn8LZJOo/Jh/Ift9M/vihnplNf4HJ0txTMxNLdrgc31IjSiiI0D3YsiIUPisBWb7uqTypJrIGSVQu6eIp+WrnLJ32aNajU4PBINwMjPJwbJ+tU5jUbDobAivGiWMy9sfcTJxeFY23QUph5cRQ/o33x7fdYDFNIsF5weakyzZSx8iFawk3K999kCE9aOw3uiWoRAuOkLHnmrbNf2wgnmQT68c4DjHMlC0bnbD1qGs6/R5+X+OLq66EgZJ5Y+iUbG9REHQi5DyXi0VPOHcpEzvYY3ukK439SX7lKfYrU5JRDmwYQnJ1h9bBLDfdq7JiCxq+psEP8KakaqU8uuuJ1MHsPpMnd309ZHux98A7TM5jWgy7uELZbW1tRukJuAb/lG2NuJFG0tZvLB9ypc9ObGZVvH4h0WKJUbmINlgkOogh2+uhZW8W7EPzutAASSLbZ22bzpP+CB455c5hV9c/a65cy95jCIeWfizyM58PpQ=
+      secure: "BRNjPvrgA2Mw+Ftf9lVTp0U+h+hqxf9HjrU9pVTVvPLjv9FecquqqQm/bel9zrZC+VyO0ZGBnNRW+70piSJl/P6G1nbRWvYNAF/SRygtCntbMeP1hqajA53j3hrfadLxUzqFSIyHpeX3eEpGSijl63ONSnJMEX/BgtxB0CPfYsyUFJd+VIfmRpfrRKIa5HtPP7qaGlpPC05xZgAfNZ159X3ydKj+w+m/DPqM0QDDUumEFe8dwDMuMdR1u0IGHlf2WFtaF5wZN3i6N4g/tV2UXn16QEPOTBAYkrgTmS3QOJczz9u6lV4eINAeyylmWbDme1sPvhzgubWOtMVdtGK5bbNqcJ3KBWYnK8GvaMzci1rsbgGqYWzcPY5Dh1yFSyHszwkczcSh2O7oxpRZ3rjkL55iJT9xQYxjKYH+0EWciOd2wnmrbSKaqnXXXlssJ+/ZBQGjyWenU3UfSL81YdmA29Lnnh0k847ruNVpN0nrDSaD9l2m5kHmBGbnEtNmcb7EcpcrNBiHiLMtWJwLxebAdnQRUSuBaRBW/rCdHdJM7yBVBpKq5J+t2f72dxzi40mgwg9PPB3yKE//bOAKaPuKd59xm4knYsIKwbm3HzmiLkdPj2fyvhHQsJIgjZ1Uvpgeg73E9+U91gU0FjJBZnr4yXgDdij35DLk0FIjRkORvmo="
+
 script:
   # other script steps might be done before running the actual analysis
   - docker ps | grep -i myapp
