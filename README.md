@@ -63,3 +63,5 @@ Une __documentation du code__ a été réalisée. L'architecture de l'applicatio
 La __documentation administrateur__ se trouve dans le fichier [doc_administrateur.md](https://github.com/maphdev/M2_CDP/blob/master/cdp-2018/doc/doc_administrateur.md). Cette documentation présente les différentes méthodes de déploiement de l'application ainsi que la marche à suivre pour exécuter les tests.
 
 La __documentation utilisateur__ se trouve dans le fichier [doc_utilisateur](https://github.com/maphdev/M2_CDP/blob/master/cdp-2018/doc/doc_utilisateur.md). Cette documentation aide l'utilisateur à utiliser le logiciel.
+
+Les documentations ont été __versionnées__ et ciblent une seule release pour assurer la __cohérence de la documentation__.
