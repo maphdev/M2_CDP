@@ -2,7 +2,7 @@
 
 ## Issues
 
-L'intégralité des issues sont décrites dans le fichier [backlog.md](https://github.com/maphdev/M2_CDP/blob/master/backlog.md).
+L'intégralité des issues sont décrites dans le fichier [backlog.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/backlog.md).
 
 Chaque issue est définie par :
 - un __identifiant unique__,
@@ -19,9 +19,9 @@ Chaque sprint [X] a été abordé par la réalisation d'un fichier sprint[X].md 
 
 | Sprint | Récapitulatif des issues | Tâches |
 |:--:|:------------|:--------------------:|
-| 1 | [sprint1.md](https://github.com/maphdev/M2_CDP/blob/master/sprint1.md) | [task1.md](https://github.com/maphdev/M2_CDP/blob/master/task1.md) |
-| 2 | [sprint2.md](https://github.com/maphdev/M2_CDP/blob/master/sprint2.md) | [task2.md](https://github.com/maphdev/M2_CDP/blob/master/task2.md) |
-| 3 | [sprint3.md](https://github.com/maphdev/M2_CDP/blob/master/sprint3.md) | [task3.md](https://github.com/maphdev/M2_CDP/blob/master/task3.md) |
+| 1 | [sprint1.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/sprint1.md) | [task1.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/task1.md) |
+| 2 | [sprint2.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/sprint2.md) | [task2.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/task2.md) |
+| 3 | [sprint3.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/sprint3.md) | [task3.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/task3.md) |
 
 Chaque tâche est définie par :
 - un identifiant,
@@ -44,13 +44,13 @@ Un fichier Dockerfile et un fichier docker-compose.yml sont mis à disposition d
 
 Il n'y a pas de __tests unitaires__ car dans le cadre de ce projet, il n'est pas pertinent de tester notre code ou nos fonctions.
 
-Les __tests de validation__ sont décrits dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/tests.md) dans la section *Écriture des tests*. Il s'agit principalement de tests End To End (E2E) réalisés avec Puppeteer et Jest.
+Les __tests de validation__ sont décrits dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/tests.md) dans la section *Écriture des tests*. Il s'agit principalement de tests End To End (E2E) réalisés avec Puppeteer et Jest.
 
 Les tests sont __mis à jour__ à chaque évolution du code.
 
-Les tests sont régulièrement exécutés et les résultats des tests sont __suivis__ dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/tests.md) dans la section *Résultats des Tests E2E en local*. Ils sont réexécutés au moins avant chaque release pour assurer un bon fonctionnement de l'application.
+Les tests sont régulièrement exécutés et les résultats des tests sont __suivis__ dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/tests.md) dans la section *Résultats des Tests E2E en local*. Ils sont réexécutés au moins avant chaque release pour assurer un bon fonctionnement de l'application.
 
-Nous avons utilisé Travis afin d'__automatiser les tests__. Ce processus d'automatisation est décrit dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/tests.md) dans la section *Automatisation des tests*.
+Nous avons utilisé Travis afin d'__automatiser les tests__. Ce processus d'automatisation est décrit dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/tests.md) dans la section *Automatisation des tests*.
 
 ## Code
 
