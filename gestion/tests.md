@@ -25,6 +25,7 @@ Ci-dessous les résultats des test E2E effectués localement :
 
 | Identifiant | Description | Date de dernière exécution | Résultat de dernière exécution |
 |:-----------:|:-----------:|:--------------------------:|:------------------------------:|
+| US#1 | Registration | 06/12/2018 | Success |
 | #US2-1 | Login | 06/12/2018 | Success |
 | #US2-2 | Logout | 06/12/2018 | Success |
 | #US3 | New project | 06/12/2018 | Success |
