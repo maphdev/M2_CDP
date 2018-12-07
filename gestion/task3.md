@@ -16,7 +16,7 @@ Lien __Trello__ : ...
 | __T3_Be5r3__ | Implémentation de _"project.js"_ (suite). Les routes à définir sont : <br> - _"/sprint/:id/deleteTask/"_ en requête DELETE qui supprime la tâche choisie par l'utilisateur de la base de données. <br> - _"/sprint/:id/modifyTask/"_ en requête PUT qui met à jour une tâche dans la base de données MongoDB avec les données du formulaire.  | #12, #14 |  | TO DO | 0.5 |  |
 | __T3_GEN__ | Implémenter la différenciation entre visiteur et développeurs. Les développeurs ont accès à toutes les fonctionnalités de l'application (pour les projets auxquels ils participent). Les visiteurs ne peuvent pas créer un nouveu projet, créer/modifier/supprimer des issues/tâches, ou modifier les paramètres d'un projet. | #15 |  | TO DO | 0.5 |  |
 | __T3_1ex__ | Réalisation du test de validation de l'US #1. | #1 |  | DONE | 0.5 | Élodie G. |
-| __T3_4ex__ | Réalisation du test de validation de l'US #4. | #4 |  | TO DO | 0.5 |  |
+| __T3_4ex__ | Réalisation du test de validation de l'US #4. | #4 |  | DONE | 0.5 | Elodie G. |
 | __T3_5ex__ | Réalisation du test de validation de l'US #5. | #5 |  | TO DO | 0.5 |  |
 | __T3_6ex__ | Réalisation du test de validation de l'US #6. | #6 |  | TO DO | 0.5 |  |
 | __T3_7ex__ | Réalisation du test de validation de l'US #7. | #7 |  | TO DO | 0.5 |  |
