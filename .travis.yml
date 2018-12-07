@@ -12,8 +12,7 @@ install:
 addons:
   sonarcloud:
     organization: "maphdev-github"
-    token:
-      secure: "x8+ROxdQq0oCKcrIi1iFRr6yxmzO6/0Gi/FVtUV3IeyokL7PcH2sDkcWKLVCJcTq38Fx4P/Xt/akBViehPbLSn7oqAYLr+g93Pb3Uu5eh6DzL4C3tQ9q3R8bL9LlZbzSQkilodogZyKh0d/VG3sAvY8a0ipmYIF1wtsPh6wTKs966LfWGX+52LnHjyyyBWo827qmrhSzBKsEXomWByQOe5t3DMT+ca8x+4n073cdShhR4qqcA285WC8dleHe4PxZbDQN5MV6Bv4ZUmuGbpRtq5G/FkIVgBYW+FrfX1ISJN2nMR/iRp3u64/enRwhhqnTTWPd9DUWoI5DCT/U7vVP0/aZMukf9dX8Oiks0lRTgmx8w1PnGvBT+s5hkXJA3NDL6ZhTQfU0/FcgYGv9z7KGpAPZpVlfsVOYfyp7g04PkxByRfj167sMfjcs1lxYzbE3Y9AZsmheUL0faz302l8s5NEQ4uoVwV7M3asdXknYI1zvXaCDdoJMe27+OPQUMSNqos9TaAPVh00wAvBJ1s29tI5tLe84gZfCWP7cSIH9yQdkc0ftSmWWLSycWgufQtFEWDy0PtYz8VPBlvK844pU4zD0yL/+qp2rMLVNLHyhPuzStzEO3LCTLzcnZ466gaogHJ3oaA0PAYbAehKByB6Eh40bWjPhU494OzJQuNXdelM=" 
+    token: $SONAR_TOKEN
 
 script:
   # other script steps might be done before running the actual analysis
