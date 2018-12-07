@@ -14,6 +14,9 @@ addons:
     organization: "maphdev-github"
     token: $SONAR_TOKEN
 
+before_script:
+  - cd ..
+
 script:
   # other script steps might be done before running the actual analysis
   - docker ps | grep -i myapp

@@ -183,13 +183,6 @@ router.route('/createUserStory')
         res.json({status: 500, error: err});
       }
 
-      let backlog = {
-        id: project.usCount,
-        description: req.body.usDesc,
-        difficulty: req.body.usDiff,
-        priority: ""
-      }
-
       cf.Project.update({_id: projectId},
         {$addToSet: {"backlog": {id: project.usCount, description: req.body.usDesc, difficulty: req.body.usDiff}}},
         {upsert:true},

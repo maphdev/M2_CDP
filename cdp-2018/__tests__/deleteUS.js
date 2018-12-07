@@ -8,6 +8,9 @@ const user = {
     password : 'Util00'
 }
 
+
+let page
+
 beforeAll(async () => {
     browser = await puppeteer.launch(
       process.env.DEBUG
