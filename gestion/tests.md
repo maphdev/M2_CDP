@@ -31,6 +31,7 @@ Ci-dessous les résultats des test E2E effectués localement :
 | #US3 | New project | 06/12/2018 | Success |
 | #US8 | Add US | 06/12/2018 | Success |
 | #US9-1 | Modify US | 06/12/2018 | Success |
+| #US9-2 | Delete US | 07/12/2018 | Success |
 
 # Écriture des tests
 
