@@ -12,6 +12,7 @@ install:
 addons:
   sonarcloud:
     organization: "maphdev-github"
+    token: $SONAR_TOKEN
 
 before_script:
   - cd ..
