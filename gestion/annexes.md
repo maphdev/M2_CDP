@@ -1,4 +1,4 @@
-# Ressources
+# Annexes
 
 Ce document est un recueil de l'ensemble des ressources et spécifications du projet. Il contient l'architecture du projet, la liste des composants, la structure du projet, la structure de la base de donnée, les liens vers Trello et releases... et tout autre information utiles pour le bon déroulement du projet.
 
@@ -81,7 +81,9 @@ Les templates EJS :
 ## Structure du projet
 
 ```
+/__test__
 /database
+/doc
 /models
 /public
   /css
@@ -97,7 +99,11 @@ package.json
 server.js
 ```
 
+Le dossier *"__test_\_"* contient les tests E2E réalisés avec Puppeteer et Jest.
+
 Le dossier _"database"_ contient le fichier gérant les accès à la base de donnée.
+
+Le dossier _"doc"_ contient la documentation utilisateur et administrateur.
 
 Le dossier _"models"_ contient les models pour la base de donnée (Mongoose).
 
@@ -149,10 +155,3 @@ Les fichiers d'initialisation du serveur et de déploiement de l'application se 
 __DONE__ : Une tâche est "DONE" lorsque le code a été copié sur la branche master et que le code compile.
 
 __Définir__ : Définir un fichier signifie le nommer, définir les fichiers dont il dépend, éventuellement définir les noms des variables ou méthodes créées/appelées.
-
-## Lien vers les releases
-
-Releases disponibles :
-- v0.1.0
-
-Les releases sont accessibles [ici](https://github.com/maphdev/M2_CDP/releases).
