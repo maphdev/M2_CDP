@@ -8,6 +8,9 @@ const user = {
     password : 'Util00'
 }
 
+
+let page
+
 beforeAll(async () => {
     browser = await puppeteer.launch(
       process.env.DEBUG
@@ -17,7 +20,7 @@ beforeAll(async () => {
           }
         : {}
     )
-    let page = await browser.newPage();
+    page = await browser.newPage();
   })
 
 describe('Add a new US', () => {
