@@ -155,3 +155,78 @@ Les fichiers d'initialisation du serveur et de déploiement de l'application se 
 __DONE__ : Une tâche est "DONE" lorsque le code a été copié sur la branche master et que le code compile.
 
 __Définir__ : Définir un fichier signifie le nommer, définir les fichiers dont il dépend, éventuellement définir les noms des variables ou méthodes créées/appelées.
+
+# Charte de codage
+
+## Indentation
+
+ - Le code doit être indenté avec __DEUX__ espaces pour améliorer la lisibilité.
+
+## Accolades
+
+ - Les accolades doivent être disposées suivant l'exemple suivant :
+
+    ```
+    function checkpoints($x, $y) {
+        ...
+    }
+    ```
+ - Éviter les accolades sur une même ligne.
+ - Éviter de mettre des accolades facultatives.
+
+## Interlignes
+
+ - Penser à insérer des lignes vides entre plusieurs lignes de code pour aérer celui-ci (quand cela est pertinent bien sûr).
+
+## Espacement
+
+ - Veiller à laisser des espaces entre les variables et les opérateurs.
+
+    ```
+    $result = $alice + $bob;
+    ```
+
+## Longueur des lignes
+
+ - Veiller à ne pas écrire des lignes de code trop longues. Une limite de 80 caractères est convenable.
+
+## Langue
+
+ - Veiller à n'utiliser qu'une seule langue. Dans notre cas, il faut utiliser seulement l'anglais.
+
+## Convention d'écriture des variables
+
+Il y a deux façons d'écrire des variables :
+ - Soit on écrit les variables sous la forme : `attachedVars`. 
+ - Soit on les écrit sous cette forme : `spaced_vars`.
+
+Ce qu'il faut éviter :
+ - Les variables trop longues (3, 4 parties maximum) : `longVariableLikeThisIsWrong` ou `long_variable_like_this_is_wrong`.
+ - Les variables qui sont peu compréhensibles : `lVar` (au lieu de `lenghtVar`).
+ - Les variables quasi-semblables : `myVar` et `myVars`.
+ - Mettre une majuscule au début des variables : `MyVar`.
+
+## Convention d'écriture des noms de classe
+
+ - Pour nommer une classe, il faut utiliser la syntaxe suivante : `MyClass`.
+
+## Convention d'écriture des constantes
+
+ - Pour nommer une constante, on utilise seulement des caractères majuscules : `CONSTANT`.
+ - Pour une constante en plusieurs mots, on utilise l'underscore : `MY_CONSTANT`.
+
+## Convention d'écriture des fonctions
+
+ - Pour nommer des fonctions, on utilise des les formes suivantes : `myFunction()` ou `functions()`.
+
+## Convention d'écriture des commentaires
+
+ - Pour commenter du code, on écrit le commenttaire sur une ligne à part, et on évite les commentaires en fin de ligne.
+
+ ```
+ //Comment
+ function someCode(){
+     ...
+ }
+ ```
+ 
