@@ -13,6 +13,9 @@ addons:
   sonarcloud:
     organization: "maphdev-github"
 
+before_script:
+  - cd ..
+
 script:
   # other script steps might be done before running the actual analysis
   - docker ps | grep -i myapp
