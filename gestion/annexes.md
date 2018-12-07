@@ -156,6 +156,8 @@ __DONE__ : Une tâche est "DONE" lorsque le code a été copié sur la branche m
 
 __Définir__ : Définir un fichier signifie le nommer, définir les fichiers dont il dépend, éventuellement définir les noms des variables ou méthodes créées/appelées.
 
+__Commit__ : les commits doivent être cloisonnés par issue ou préoccuppation.
+
 # Charte de codage
 
 ## Indentation
