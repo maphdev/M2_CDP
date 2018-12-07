@@ -17,7 +17,7 @@ beforeAll(async () => {
           }
         : {}
     )
-    page = await browser.newPage();
+    let page = await browser.newPage();
   })
 
 describe('Add a new US', () => {
