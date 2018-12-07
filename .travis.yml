@@ -16,4 +16,4 @@ addons:
 script:
   # other script steps might be done before running the actual analysis
   - docker ps | grep -i myapp
-  - sonar-scanner -Dsonar.login=${SONAR_TOKEN}
+  - sonar-scanner
