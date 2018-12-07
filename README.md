@@ -1,6 +1,6 @@
 # Résumé de CDP
 
-Ce document met en avant la réalisation des points de contrôle pour chaque artefact intervenants dans la conduite de projet
+Ce document met en avant la réalisation des points de contrôle pour chaque artefact intervenants dans la conduite de projet.
 
 ## Issues
 
@@ -52,9 +52,22 @@ Les tests sont __mis à jour__ à chaque évolution du code.
 
 Les tests sont régulièrement exécutés et les résultats des tests sont __suivis__ dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/tests.md) dans la section *Résultats des Tests E2E en local*. Ils sont réexécutés au moins avant chaque release pour assurer un bon fonctionnement de l'application.
 
-Nous avons utilisé Travis afin d'__automatiser les tests__. Ce processus d'automatisation est décrit dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/tests.md) dans la section *Automatisation des tests*.
+Nous avons utilisé [Travis](https://travis-ci.com/) afin d'__automatiser les tests__. Ce processus d'automatisation est décrit dans le fichier [tests.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/tests.md) dans la section *Automatisation des tests*.
+
+Le statut du build travis est actuellement : [![Build Status](https://travis-ci.com/maphdev/M2_CDP.svg?branch=master)](https://travis-ci.com/maphdev/M2_CDP).
 
 ## Code
+
+Une __charte de codage__ a été rédigée dans le fichier [annexes.md](https://github.com/maphdev/M2_CDP/blob/master/gestion/annexes.md) dans la section *Charte de Codage* afin d'imposer un style uniforme à tous les développeurs et de coder proprement.
+
+Nous avons utilisé [SonarCloud](https://sonarcloud.io/) afin de __mesurer la qualité du code source__ de l'application. Travis a été utilisé afin d'automatiser le scan du code source par SonarCloud.
+
+Nous obtenons les résultats suivants :
+
+[![Build Status](https://sonarcloud.io/api/project_badges/measure?project=M2:CDP&metric=ncloc)](https://sonarcloud.io/dashboard?id=M2:CDP) [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=M2:CDP&metric=code_smells)](https://sonarcloud.io/dashboard?id=M2:CDP) [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=M2:CDP&metric=bugs)](https://sonarcloud.io/dashboard?id=M2:CDP) [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=M2:CDP&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=M2:CDP) [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=M2:CDP&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=M2:CDP) [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=M2:CDP&metric=security_rating)](https://sonarcloud.io/dashboard?id=M2:CDP) [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=M2:CDP&metric=alert_status)](https://sonarcloud.io/dashboard?id=M2:CDP)
+
+Le code source a été __versionné avec Git__. Tous les commits des développeurs se font sur la brache Master. Un __intégrateur__ se charge de construire la Release sur une branche versionnée avec du cherry-picking.
+
 
 ## Documentation
 
