@@ -29,6 +29,7 @@ Ci-dessous les résultats des test E2E effectués localement :
 | #US2-1 | Login | 06/12/2018 | Success |
 | #US2-2 | Logout | 06/12/2018 | Success |
 | #US3 | New project | 06/12/2018 | Success |
+| #US4 | Add developper | 07/12/2018 | Success |
 | #US8 | Add US | 06/12/2018 | Success |
 | #US9-1 | Modify US | 06/12/2018 | Success |
 | #US9-2 | Delete US | 07/12/2018 | Success |
